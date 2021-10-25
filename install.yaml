@@ -240,10 +240,18 @@ spec:
     served: true
     storage: true
 ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#  name: argo
+
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  annotations:
+    iam.gke.io/gcp-service-account: argo-sa@bowerbird-testing.iam.gserviceaccount.com
   name: argo
+  namespace: argo
 ---
 apiVersion: v1
 kind: ServiceAccount
