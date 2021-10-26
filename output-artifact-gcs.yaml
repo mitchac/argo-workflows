@@ -37,6 +37,8 @@ spec:
         artifacts:
           - name: out-art
             path: /tmp/hello_world.txt
+            archive:
+              none: {}
             gcs:
               bucket: bowerbird-testing-home
               key: bowerbird/hello_world.txt
