@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: output-artifact-gcs-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+  serviceAccountName: argo
+  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 3Gi
+  entrypoint: output-artifact-gcs-example
+  templates:
+    - name: output-artifact-gcs-example
+      inputs:
+        artifacts:
+          - name: my-art
+            path: /my-artifact
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird
+      container:
+        image: debian:latest
+        command: [sh, -c]
+        args: ["sleep 1; echo -n hello world > /tmp/hello_world.txt"]
+        volumeMounts:
+        - name: workdir
+          mountPath: /mnt/vol  
+      outputs:
+        artifacts:
+          - name: out-art
+            path: /tmp/hello_world.txt
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird/hello_world.txt
