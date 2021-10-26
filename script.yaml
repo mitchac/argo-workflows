@@ -25,5 +25,6 @@ spec:
         command:
           - sh
         source: |
-          ls -l /my-artifact
-          ls -la        
+          ls -l \
+          my-artifact
+        

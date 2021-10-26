@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: voltest-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+  serviceAccountName: argo
+  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 3Gi
+  entrypoint: first-task
+  templates:
+  - name: first-task
+    script:
+      name: 'list files'
+      image: 'debian:latest'
+      command:
+        - sh
+      source: |
+        df
+      volumeMounts:
+      - name: workdir
+        mountPath: /mnt/vol   
