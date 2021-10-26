@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: script-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+  serviceAccountName: argo
+  entrypoint: input-artifact-gcs-example
+  templates:
+    - name: input-artifact-gcs-example
+      inputs:
+        artifacts:
+          - name: my-art
+            path: /my-artifact
+            gcs:
+              bucket: bowerbird-testing-home
+              # key could be either a file or a directory.
+              key: bowerbird
+      script:
+        name: 'list files'
+        image: 'debian:latest'
+        command:
+          - sh
+        source: |
+          ls -l /my-artifact
+          ls -la        
