@@ -42,17 +42,21 @@ spec:
           value: /mnt/vol
         command: [sh,-c]
         args: ["
+        cd /mnt/vol;
         python 
         /kingfisher-download/bin/kingfisher 
         get  
         -r {{inputs.parameters.SRA_accession_num}} 
+        --output-format-possibilities sra
+        --guess-aws-location
+        --hide-download-progress
         -m 'aws-http'
         &&
         /opt/conda/envs/env/bin/time 
         /singlem/bin/singlem 
         pipe
-          --sra-files ~{SRA_accession_num}.sra 
-          --archive_otu_table ~{SRA_accession_num}.unannotated.singlem.json 
+          --sra-files {{inputs.parameters.SRA_accession_num}} .sra 
+          --archive_otu_table {{inputs.parameters.SRA_accession_num}}.unannotated.singlem.json 
           --threads 1
           --diamond-prefilter-performance-parameters '--block-size 0.5 --target-indexed -c1 --min-orf 24'
           --diamond-prefilter-db /pkgs/53_db2.0-attempt4.0.60.faa.dmnd 
