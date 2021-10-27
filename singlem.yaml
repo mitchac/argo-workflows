@@ -16,7 +16,7 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 3Gi
+          storage: 13Gi
   entrypoint: output-artifact-gcs-example
   arguments:
     parameters:
@@ -69,6 +69,10 @@ spec:
         volumeMounts:
         - name: workdir
           mountPath: /mnt/vol  
+        resources:
+          requests:
+            memory: 3Mi
+            cpu: 1000m
       outputs:
         artifacts:
           - name: out-art
