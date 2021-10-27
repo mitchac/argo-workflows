@@ -1,0 +1,53 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: singlem-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+    fsGroup: 8737
+  serviceAccountName: argo
+  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 3Gi
+  entrypoint: output-artifact-gcs-example
+  arguments:
+    parameters:
+      - name: SRA_accession_num
+        value: ERR2535307
+  templates:
+    - name: output-artifact-gcs-example
+      inputs:
+        parameters:
+          - name: SRA_accession_num
+            value: '{{workflow.parameters.SRA_accession_num}}'
+        artifacts:
+          - name: my-art
+            path: /my-artifact
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird
+      container:
+        name: singlem-gather
+        image: gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev26.4ba1c49
+        command: [/kingfisher-download/bin/kingfisher,-c]
+        args: ["get","-r {{inputs.parameters.SRA_accession_num}} -m {aws-http}"]
+        volumeMounts:
+        - name: workdir
+          mountPath: /mnt/vol  
+      outputs:
+        artifacts:
+          - name: out-art
+            path: /mnt/vol/hello_world.txt
+            archive:
+              none: {}
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird/hello_world.txt
