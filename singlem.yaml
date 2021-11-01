@@ -71,7 +71,7 @@ spec:
           mountPath: /mnt/vol  
         resources:
           requests:
-            memory: 3Mi
+            memory: 4Gi
             cpu: 1000m
       outputs:
         artifacts:
