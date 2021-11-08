@@ -1,5 +1,5 @@
 metadata:
-  name: delightful-octopus
+  generateName: hello-
   namespace: argo
   labels:
     example: 'true'
