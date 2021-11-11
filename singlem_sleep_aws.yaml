@@ -18,6 +18,10 @@ spec:
         requests:
           storage: 13Gi
   entrypoint: output-artifact-gcs-example
+  ttlStrategy:
+    secondsAfterCompletion: 10 # Time to live after workflow is completed, replaces ttlSecondsAfterFinished
+    secondsAfterSuccess: 5     # Time to live after workflow is successful
+    secondsAfterFailure: 5     # Time to live after workflow fails
   arguments:
     parameters:
       - name: SRA_accession_num
@@ -43,7 +47,7 @@ spec:
           value: /mnt/vol
         command: [sh,-c]
         args: ["
-          sleep 600 
+          sleep 60 
         "]
         volumeMounts:
         - name: workdir
