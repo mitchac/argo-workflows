@@ -54,12 +54,12 @@ spec:
             cpu: 1
 #      nodeSelector:
 #        purpose: workflow-jobs
-#      tolerations:
-#      - key: "reserved-pool"
-#        operator: "Equal"
-#        value: "true"
-#        effect: "NoSchedule"
-#            
+      tolerations:
+      - key: "reserved-pool"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+            
 #      outputs:
 #        artifacts:
 #          - name: out-art
