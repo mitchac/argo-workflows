@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  generateName: singlem-sleep-
+  generateName: singlem-sleep-aws-
   namespace: argo
 spec:
   securityContext:
@@ -47,7 +47,7 @@ spec:
           value: /mnt/vol
         command: [sh,-c]
         args: ["
-          sleep 60 
+          sleep 180 
         "]
         volumeMounts:
         - name: workdir
