@@ -19,9 +19,9 @@ spec:
           storage: 13Gi
   entrypoint: output-artifact-gcs-example
   ttlStrategy:
-    secondsAfterCompletion: 10 # Time to live after workflow is completed, replaces ttlSecondsAfterFinished
-    secondsAfterSuccess: 5     # Time to live after workflow is successful
-    secondsAfterFailure: 5     # Time to live after workflow fails
+    secondsAfterCompletion: 600 # Time to live after workflow is completed, replaces ttlSecondsAfterFinished
+    secondsAfterSuccess: 600     # Time to live after workflow is successful
+    secondsAfterFailure: 600   # Time to live after workflow fails
   arguments:
     parameters:
       - name: SRA_accession_num
@@ -47,7 +47,8 @@ spec:
           value: /mnt/vol
         command: [sh,-c]
         args: ["
-          sleep 180 
+          sleep 180;
+          cat /my-artifact/input.txt > /mnt/vol/out.txt
         "]
         volumeMounts:
         - name: workdir
@@ -63,13 +64,13 @@ spec:
         operator: "Equal"
         value: "true"
         effect: "NoSchedule"
-            
-#      outputs:
-#        artifacts:
-#          - name: out-art
-#            path: /mnt/vol/hello_world.txt
-#            archive:
-#              none: {}
-#            gcs:
-#              bucket: bowerbird-testing-home
-#              key: bowerbird/hello_world.txt
+      outputs:
+        artifacts:
+          - name: out-art
+            path: /mnt/vol/out.txt
+            archive:
+              none: {}
+            s3:
+              endpoint: s3.amazonaws.com
+              bucket: batch-artifact-repository-401305384268
+              key: test/output.txt
