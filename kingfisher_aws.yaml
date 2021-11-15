@@ -1,0 +1,84 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: kingfisher-aws-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737 #; any non-root user
+    fsGroup: 8737
+  serviceAccountName: argo
+  volumeClaimTemplates:
+  - metadata:
+      name: workdir
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 13Gi
+  entrypoint: output-artifact-gcs-example
+  ttlStrategy:
+    secondsAfterCompletion: 600 # Time to live after workflow is completed, replaces ttlSecondsAfterFinished
+    secondsAfterSuccess: 600     # Time to live after workflow is successful
+    secondsAfterFailure: 600   # Time to live after workflow fails
+  arguments:
+    parameters:
+      - name: SRA_accession_num
+        value: ERR2535307
+  templates:
+    - name: output-artifact-gcs-example
+      inputs:
+        parameters:
+          - name: SRA_accession_num
+            value: '{{workflow.parameters.SRA_accession_num}}'
+        artifacts:
+          - name: my-art
+            path: /my-artifact
+            s3:
+              endpoint: s3.amazonaws.com
+              bucket: batch-artifact-repository-401305384268
+              key: test
+      container:
+        name: singlem-gather
+        image: gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev26.4ba1c49
+        env:
+        - name: TMPDIR
+          value: /mnt/vol
+        command: [sh,-c]
+        args: ["
+          cd /mnt/vol;
+          pwd;
+          python 
+          /kingfisher-download/bin/kingfisher 
+          get  
+          -r {{inputs.parameters.SRA_accession_num}} 
+          --output-format-possibilities sra
+          --guess-aws-location
+          --hide-download-progress
+          -m 'aws-http'   
+        "]
+        volumeMounts:
+        - name: workdir
+          mountPath: /mnt/vol  
+        resources:
+          requests:
+            memory: "3600Mi"
+            cpu: 1
+#      nodeSelector:
+#        purpose: workflow-jobs
+      tolerations:
+      - key: "reserved-pool"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+      outputs:
+        artifacts:
+          - name: out-art
+            path: '/mnt/vol/{{workflow.parameters.SRA_accession_num}}.sra'
+            archive:
+              none: {}
+            s3:
+              endpoint: s3.amazonaws.com
+              bucket: batch-artifact-repository-401305384268
+              key: 'test/{{workflow.parameters.SRA_accession_num}}.sra'
