@@ -17,7 +17,7 @@ spec:
       resources:
         requests:
           storage: 13Gi
-  entrypoint: output-artifact-gcs-example
+  entrypoint: kingfisher
   ttlStrategy:
     secondsAfterCompletion: 600 # Time to live after workflow is completed, replaces ttlSecondsAfterFinished
     secondsAfterSuccess: 600     # Time to live after workflow is successful
@@ -27,7 +27,7 @@ spec:
       - name: SRA_accession_num
         value: ERR2535307
   templates:
-    - name: output-artifact-gcs-example
+    - name: kingfisher
       inputs:
         parameters:
           - name: SRA_accession_num

@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Workflow
+kind: WorkflowTemplate
 metadata:
   generateName: kingfisher-
   namespace: argo
@@ -17,13 +17,13 @@ spec:
       resources:
         requests:
           storage: 13Gi
-  entrypoint: output-artifact-gcs-example
+  entrypoint: kingfisher
   arguments:
     parameters:
       - name: SRA_accession_num
         value: ERR2535307
   templates:
-    - name: output-artifact-gcs-example
+    - name: kingfisher
       inputs:
         parameters:
           - name: SRA_accession_num
@@ -76,3 +76,4 @@ spec:
             gcs:
               bucket: bowerbird-testing-home
               key: 'bowerbird/{{workflow.parameters.SRA_accession_num}}.sra'
+              #            when: "{{workflow.parameters.SRA_accession_num}} == ERR2535307"
