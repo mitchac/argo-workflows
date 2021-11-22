@@ -36,14 +36,13 @@ spec:
               key: bowerbird
       container:
         name: singlem-gather
-        image: gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev26.4ba1c49
+        image: gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev30.e97d171
         env:
         - name: TMPDIR
           value: /mnt/vol
         command: [sh,-c]
         args: ["
         cd /mnt/vol;
-        pwd;
         python 
         /kingfisher-download/bin/kingfisher 
         get  
@@ -55,19 +54,12 @@ spec:
         &&
         ls
         && 
-        /opt/conda/envs/env/bin/time 
-        /singlem/bin/singlem 
-        pipe
-          --sra-files {{inputs.parameters.SRA_accession_num}}.sra 
-          --archive_otu_table {{inputs.parameters.SRA_accession_num}}.unannotated.singlem.json 
+        /singlem/bin/singlem pipe
+          --sra-files {{inputs.parameters.SRA_accession_num}}.sra
+          --archive_otu_table {{inputs.parameters.SRA_accession_num}}.unannotated.singlem.json
           --threads 1
-          --diamond-prefilter-performance-parameters '--block-size 0.5 --target-indexed -c1 --min-orf 24'
-          --diamond-prefilter-db /pkgs/53_db2.0-attempt4.0.60.faa.dmnd 
-          --min_orf_length 72 
-          --singlem-packages `ls -d /pkgs/*spkg`
-          --diamond-package-assignment
+          --singlem-metapackage /mpkg
           --no-assign-taxonomy
-          --working-directory-tmpdir
         "]
         volumeMounts:
         - name: workdir
