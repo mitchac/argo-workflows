@@ -2,7 +2,7 @@ To submit a batch job to argo run..
 ```
 ./argo-batch-template.sh
 ```
-..to generate a single file with an argo / k8s workflow template for each accession in the script - batch-job-processed.yaml.
+..to generate a single file with an argo / k8s workflow template - batch-job-processed.yaml - for each accession in the script.
 Then run ..
 ```
 argo submit batch-job-processed.yaml -n argo
