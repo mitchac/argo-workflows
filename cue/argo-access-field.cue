@@ -2,7 +2,7 @@ job: [Name=_]: {
 apiVersion: "argoproj.io/v1alpha1"
 kind:       "Workflow"
 metadata: {
-        generateName: "singlem-"
+        generateName: string
         namespace:    "argo"
 }
 spec: {
@@ -36,7 +36,7 @@ spec: {
                 inputs: {
                         parameters: [{
                                 name:  "SRA_accession_num"
-                                value: string
+                                value: "\(spec.arguments.parameters[0].value)"
                         }]
                         artifacts: [{
                                 name: "my-art"
@@ -86,6 +86,10 @@ spec: {
         }]
     }
 }
-//job: test: spec: templates: [0] 
-//job: test: spec: arguments: parameters: [{name:"SRA_accession_num"}]
-job: test: spec: arguments: parameters: [{name:"SRA_accession_num",value:"cat"}]
+job: test: {
+    metadata: generateName:"my workflow name"
+    spec: arguments: parameters: [{
+            name:"SRA_accession_num"
+            value:"ERR2535307"                            
+    }]
+}
