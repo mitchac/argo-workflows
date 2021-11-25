@@ -1,4 +1,4 @@
-### Merge SRA accessions into Argo workflow template and run on argo 
+### Merge SRA accessions into Argo workflow template and submit to Argo 
 
 Install yq >= 4.15 from.. 
 
