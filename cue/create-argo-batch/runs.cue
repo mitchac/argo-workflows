@@ -1,3 +1,5 @@
+package create_argo_batch
+
 _data: {
 	// meta info
 	summary:  "first test set of singlem runs for argo"

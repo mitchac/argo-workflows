@@ -1,15 +1,6 @@
-_data: {
-        // meta info
-        summary:  "first test set of singlem runs for argo"
+package create_argo_batch
 
-        sra_accessions: [
-                {number: "SRR10617010", GB: 1, gbp: 1},
-                {number: "SRR1046270", GB: 1, gbp: 1},
-                {number: "SRR6486425", GB: 1, gbp: 1},
-        ]
-}
-
-rendered: [ for acc in _data.sra_accessions {
+merged_templates: [ for acc in _data.sra_accessions {
 	{
 apiVersion: "argoproj.io/v1alpha1"
 kind:       "Workflow"
