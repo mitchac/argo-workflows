@@ -1,4 +1,4 @@
-To merge the accession data into the argo workflow template run the following command..
+### Merge SRA accessions into Argo workflow template and run on argo 
 
 Install yq >= 4.15 from.. 
 
