@@ -19,7 +19,7 @@ spec: {
                 metadata: name: "workdir"
                 spec: {
                         accessModes: ["ReadWriteOnce"]
-                        resources: requests: storage: "13Gi"
+                        resources: requests: storage: "\((((10000 + 1100*acc["GB"])div 1)+1)*1)Mi"
                 }
         }]
         entrypoint: "output-artifact-gcs-example"
@@ -67,7 +67,8 @@ spec: {
                                 mountPath: "/mnt/vol"
                         }]
                         resources: requests: {
-                                memory: "3600Mi"
+                                //memory: "3600Mi"
+				memory: "\((((2500 + 20*acc["gbp"])div 256)+1)*256)Mi" 
                                 cpu:    1
                         }
                 }
