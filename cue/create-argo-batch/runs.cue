@@ -10,5 +10,7 @@ _data: {
 		{number: "SRR11262366", GB: 1, gbp: 1},
 		{number: "SRR10667692", GB: 1, gbp: 1},
 		{number: "ERR3680132", GB: 1, gbp: 2},
+		{number: "ERR3679759", GB: 1, gbp: 2},
+		{number: "SRR8861225", GB: 1, gbp: 1},
 	]
 }
