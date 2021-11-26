@@ -19,8 +19,8 @@ spec: {
                 metadata: name: "workdir"
                 spec: {
                         accessModes: ["ReadWriteOnce"]
-                        resources: requests: storage: "\((((10000 + 1100*acc["GB"])div 1)+1)*1)Mi"
-                }
+                        resources: requests: storage: "\((((((10000 + 1100*acc["GB"])div 1)+1)*1) div 10)*7)Mi"
+		}
         }]
         entrypoint: "output-artifact-gcs-example"
         ttlStrategy: {
@@ -68,8 +68,8 @@ spec: {
                         }]
                         resources: requests: {
                                 //memory: "3600Mi"
-				memory: "\((((2500 + 20*acc["gbp"])div 256)+1)*256)Mi" 
-                                cpu:    1
+				memory: "\(((((2500 + 20*acc["gbp"])div 256)+1)*256)/2)Mi" 
+                                cpu:  	"500m"
                         }
                 }
                 nodeSelector: purpose: "workflow-jobs"
