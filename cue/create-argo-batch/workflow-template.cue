@@ -19,7 +19,7 @@ spec: {
                 metadata: name: "workdir"
                 spec: {
                         accessModes: ["ReadWriteOnce"]
-                        resources: requests: storage: "\((((((10000 + 1100*acc["GB"])div 1)+1)*1) div 10)*7)Mi"
+                        resources: requests: storage: "\((((7000 + acc["mbytes"])div 1)+1)*1)Mi"
 		}
         }]
         entrypoint: "output-artifact-gcs-example"
@@ -31,7 +31,7 @@ spec: {
         arguments: {
                 parameters: [{
                         name:  "SRA_accession_num"
-                        value: acc["number"]
+                        value: acc["acc"]
                 }]
         }
         templates: [{
@@ -39,7 +39,7 @@ spec: {
                 inputs: {
                         parameters: [{
                                 name:  "SRA_accession_num"
-                                value: acc["number"]
+                                value: acc["acc"]
                         }]
                         artifacts: [{
                                 name: "my-art"
@@ -68,7 +68,7 @@ spec: {
                         }]
                         resources: requests: {
                                 //memory: "3600Mi"
-				memory: "\(((((2500 + 20*acc["gbp"])div 256)+1)*256)/2)Mi" 
+				memory: "\(((1200 + 2*(acc["mbases"] div 1000)) div 256)*256)Mi" 
                                 cpu:  	"500m"
                         }
                 }
