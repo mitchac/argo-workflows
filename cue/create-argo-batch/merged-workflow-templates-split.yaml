@@ -1,0 +1,71 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: singlem-
+  namespace: argo
+spec:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 8737
+    fsGroup: 8737
+  serviceAccountName: argo
+  volumeClaimTemplates:
+    - metadata:
+        name: workdir
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 7002Mi
+  entrypoint: singlem-task
+  ttlStrategy:
+    secondsAfterCompletion: 3600
+    secondsAfterSuccess: 3600
+    secondsAfterFailure: 3600
+  arguments:
+    parameters:
+      - name: SRA_accession_num
+        value: ERR4374862
+  templates:
+    - name: singlem-task
+      inputs:
+        parameters:
+          - name: SRA_accession_num
+            value: ERR4374862
+        artifacts:
+          - name: my-art
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird
+            path: /my-artifact
+      container:
+        name: singlem-gather
+        image: gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev30.e97d171
+        env:
+          - name: TMPDIR
+            value: /mnt/vol
+        command:
+          - sh
+          - -c
+        args:
+          - ' cd /mnt/vol; python /kingfisher-download/bin/kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m ''aws-http'' && ls && /singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table {{inputs.parameters.SRA_accession_num}}.unannotated.singlem.json --threads 1 --singlem-metapackage /mpkg --no-assign-taxonomy && ls /mnt/vol '
+        volumeMounts:
+          - name: workdir
+            mountPath: /mnt/vol
+        resources:
+          requests:
+            memory: 1024Mi
+            cpu: 500m
+      tolerations:
+        - key: reserved-pool
+          operator: Equal
+          value: "true"
+          effect: NoSchedule
+      outputs:
+        artifacts:
+          - name: out-art
+            gcs:
+              bucket: bowerbird-testing-home
+              key: bowerbird/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json
+            path: /mnt/vol/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json

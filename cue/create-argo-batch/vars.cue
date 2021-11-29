@@ -1,3 +1,3 @@
 package create_argo_batch
 
-cloud_provider: "aws"
+_cloud_provider: "gcp"

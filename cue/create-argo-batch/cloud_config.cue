@@ -9,7 +9,7 @@ package create_argo_batch
 	}
 }
 
-cloud_configs: {
+_cloud_configs: {
 	aws: #cloud_config & {
 		storage: {
 			endpoint: "s3.amazonaws.com"

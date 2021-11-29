@@ -1,8 +1,8 @@
-package create_argo_batch
+//package create_argo_batch
 
 _data: {
 	// meta info
-	summary:  "first test set of singlem runs for argo"
+	summary:  "argo-first-batch"
 
 	sra_accessions: [
 		{acc: "SRR12512309", mbases: 1, mbytes: 2},

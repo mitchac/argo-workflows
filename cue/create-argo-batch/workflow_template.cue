@@ -5,8 +5,10 @@ merged_templates: [ for acc in _data.sra_accessions {
 		apiVersion: "argoproj.io/v1alpha1"
 		kind:       "Workflow"
 		metadata: {
-			generateName: "test"
+			generateName: "singlem-"
 			namespace:    "argo"
+			//labels:
+			// nickname: "\(_data.summary)"
 		}
 		spec: {
 			securityContext: {
@@ -22,7 +24,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					resources: requests: storage: "\(((__div((7000+acc["mbytes"]), 1))+1)*1)Mi"
 				}
 			}]
-			entrypoint: "output-artifact-gcs-example"
+			entrypoint: "singlem-task"
 			ttlStrategy: {
 				secondsAfterCompletion: 3600 // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
 				secondsAfterSuccess:    3600 // Time to live after workflow is successful
@@ -35,7 +37,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}]
 			}
 			templates: [{
-				name: "output-artifact-gcs-example"
+				name: "singlem-task"
 				inputs: {
 					parameters: [{
 						name:  "SRA_accession_num"
@@ -44,11 +46,11 @@ merged_templates: [ for acc in _data.sra_accessions {
 					artifacts: [{
 						name: "my-art"
 						path: "/my-artifact"
-						if cloud_provider == "aws" {
-							s3: cloud_configs.aws.storage
+						if _cloud_provider == "aws" {
+							s3: _cloud_configs.aws.storage
 						}
-						if cloud_provider == "gcp" {
-							gcs: cloud_configs.gcp.storage
+						if _cloud_provider == "gcp" {
+							gcs: _cloud_configs.gcp.storage
 						}
 
 					}]
@@ -71,7 +73,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}]
 					resources: requests: {
 						//memory: "3600Mi"
-						memory: "\((__div((1200+2*(acc["mbases"] div 1000)), 256))*256)Mi"
+						memory: "\((__div((1200+2*(__div(acc["mbases"], 1000))), 256))*256)Mi"
 						cpu:    "500m"
 					}
 				}
@@ -85,15 +87,21 @@ merged_templates: [ for acc in _data.sra_accessions {
 				outputs: artifacts: [{
 					name: "out-art"
 					path: "/mnt/vol/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
-					if cloud_provider == "aws" {
-						s3: cloud_configs.aws.storage
+					if _cloud_provider == "aws" {
+						s3: {
+							endpoint: _cloud_configs.aws.storage.endpoint
+							bucket:   _cloud_configs.aws.storage.bucket
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+						}
 					}
-					if cloud_provider == "gcp" {
-						gcs: cloud_configs.gcp.storage
+					if _cloud_provider == "gcp" {
+						gcs: {
+							bucket: _cloud_configs.gcp.storage.bucket
+							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+						}
 					}
 				}]
 			}]
 		}
 	}
-
 }]
