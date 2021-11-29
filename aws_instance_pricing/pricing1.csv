@@ -20,75 +20,75 @@ t2.medium	2	24	4	EBS-Only	Low to Moderate		3.3 GHz Intel Scalable Processor
 t2.large	2	36	8	EBS-Only	Low to Moderate		3.0 GHz Intel Scalable Processor
 t2.xlarge	4	54	16	EBS-Only	Moderate		3.0 GHz Intel Scalable Processor
 t2.2xlarge	8	81	32	EBS-Only	Moderate		3.0 GHz Intel Scalable Processor
-m6i.large	2	8		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.xlarge	4	16		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.2xlarge	8	32		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.4xlarge	16	64		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.8xlarge	32	128		EBS-Only	12.5	10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.12xlarge	48	192		EBS-Only	18.75	15	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.16xlarge	64	256		EBS-Only	25	20	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.24xlarge	96	384		EBS-Only	37.5	30	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.32xlarge	128	512		EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m6i.metal	128	512		EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-m5.large	2	8		EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.xlarge	4	16		EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.2xlarge	8	32		EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.4xlarge	16	64		EBS-Only	Up to 10	4750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.8xlarge	32	128		EBS Only	10	6800	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.12xlarge	48	192		EBS-Only	12	9500	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.16xlarge	64	256		EBS Only	20	13600	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.24xlarge	96	384		EBS-Only	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5.metal	96*	384		EBS-Only	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.large	2	8		1 x 75 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.xlarge	4	16		1 x 150 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.2xlarge	8	32		1 x 300 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.4xlarge	16	64		2 x 300 NVMe SSD	Up to 10	4750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.8xlarge	32	128		2 x 600 NVMe SSD	10	6800	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.12xlarge	48	192		2 x 900 NVMe SSD	12	9500	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.16xlarge	64	256		4 x 600 NVMe SSD	20	13600	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.24xlarge	96	384		4 x 900 NVMe SSD	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5d.metal	96*	384		4 x 900 NVMe SSD	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
-m5a.large	2	8		EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.xlarge	4	16		EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.2xlarge	8	32		EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.4xlarge	16	64		EBS-Only	Up to 10	2880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.8xlarge	32	128		EBS Only	Up to 10	4750	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.12xlarge	48	192		EBS-Only	10	6780	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.16xlarge	64	256		EBS Only	12	9500	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5a.24xlarge	96	384		EBS-Only	20	13570	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.large	2	8		1 x 75 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.xlarge	4	16		1 x 150 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.2xlarge	8	32		1 x 300 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.4xlarge	16	64		2 x 300 NVMe SSD	Up to 10	2880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.8xlarge	32	128		2 x 600 NVMe SSD	Up to 10	4750	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.12xlarge	48	192		2 x 900 NVMe SSD	10	6870	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.16xlarge	64	256		4 x 600 NVMe SSD	12	9500	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-m5ad.24xlarge	96	384		4 x 900 NVMe SSD	20	13570	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
-c6i.large	2	4		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.xlarge	4	8		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.2xlarge	8	16		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.4xlarge	16	32		EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.8xlarge	32	64		EBS-Only	12.5	10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.12xlarge	48	96		EBS-Only	18.75	15	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.16xlarge	64	128		EBS-Only	25	20	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.24xlarge	96	192		EBS-Only	37.5	30	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.32xlarge	128	256		EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c6i.metal	128	256		EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
-c5.large	2	4		EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5.xlarge	4	8		EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5.2xlarge	8	16		EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5.4xlarge	16	32		EBS-Only	Up to 10	4750	Intel Xeon Scalable
-c5.9xlarge	36	72		EBS-Only	10	9500	Intel Xeon Scalable
-c5.12xlarge	48	96		EBS-Only	12	9500	Intel Xeon Scalable
-c5.18xlarge	72	144		EBS-Only	25	19000	Intel Xeon Scalable
-c5.24xlarge	96	192		EBS-Only	25	19000	Intel Xeon Scalable
-c5.metal	96	192		EBS-Only	25	19000	Intel Xeon Scalable
-c5d.large	2	4		1 x 50 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5d.xlarge	4	8		1 x 100 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5d.2xlarge	8	16		1 x 200 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
-c5d.4xlarge	16	32		1 x 400 NVMe SSD	Up to 10	4750	Intel Xeon Scalable
-c5d.9xlarge	36	72		1 x 900 NVMe SSD	10	9500	Intel Xeon Scalable
-c5d.12xlarge	48	96		2 x 900 NVMe SSD	12	9500	Intel Xeon Scalable
-c5d.18xlarge	72	144		2 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
-c5d.24xlarge	96	192		4 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
-c5d.metal	96	192		4 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
+m6i.large	2		8	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.xlarge	4		16	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.2xlarge	8		32	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.4xlarge	16		64	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.8xlarge	32		128	EBS-Only	12.5	10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.12xlarge	48		192	EBS-Only	18.75	15	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.16xlarge	64		256	EBS-Only	25	20	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.24xlarge	96		384	EBS-Only	37.5	30	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.32xlarge	128		512	EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m6i.metal	128		512	EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+m5.large	2		8	EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.xlarge	4		16	EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.2xlarge	8		32	EBS-Only	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.4xlarge	16		64	EBS-Only	Up to 10	4750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.8xlarge	32		128	EBS Only	10	6800	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.12xlarge	48		192	EBS-Only	12	9500	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.16xlarge	64		256	EBS Only	20	13600	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.24xlarge	96		384	EBS-Only	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5.metal	96*		384	EBS-Only	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.large	2		8	1 x 75 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.xlarge	4		16	1 x 150 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.2xlarge	8		32	1 x 300 NVMe SSD	Up to 10	Up to 4,750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.4xlarge	16		64	2 x 300 NVMe SSD	Up to 10	4750	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.8xlarge	32		128	2 x 600 NVMe SSD	10	6800	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.12xlarge	48		192	2 x 900 NVMe SSD	12	9500	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.16xlarge	64		256	4 x 600 NVMe SSD	20	13600	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.24xlarge	96		384	4 x 900 NVMe SSD	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5d.metal	96*		384	4 x 900 NVMe SSD	25	19000	Up to 3.1 GHz Intel Xeon® Platinum 8175M processors with new Intel Advanced Vector Extension (AVX-512) instruction set
+m5a.large	2		8	EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.xlarge	4		16	EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.2xlarge	8		32	EBS-Only	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.4xlarge	16		64	EBS-Only	Up to 10	2880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.8xlarge	32		128	EBS Only	Up to 10	4750	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.12xlarge	48		192	EBS-Only	10	6780	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.16xlarge	64		256	EBS Only	12	9500	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5a.24xlarge	96		384	EBS-Only	20	13570	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.large	2		8	1 x 75 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.xlarge	4		16	1 x 150 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.2xlarge	8		32	1 x 300 NVMe SSD	Up to 10	Up to 2,880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.4xlarge	16		64	2 x 300 NVMe SSD	Up to 10	2880	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.8xlarge	32		128	2 x 600 NVMe SSD	Up to 10	4750	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.12xlarge	48		192	2 x 900 NVMe SSD	10	6870	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.16xlarge	64		256	4 x 600 NVMe SSD	12	9500	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+m5ad.24xlarge	96		384	4 x 900 NVMe SSD	20	13570	AMD EPYC 7000 series processors with an all core turbo clock speed of 2.5 GHz
+c6i.large	2		4	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.xlarge	4		8	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.2xlarge	8		16	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.4xlarge	16		32	EBS-Only	Up to 12.5	Up to 10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.8xlarge	32		64	EBS-Only	12.5	10	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.12xlarge	48		96	EBS-Only	18.75	15	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.16xlarge	64		128	EBS-Only	25	20	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.24xlarge	96		192	EBS-Only	37.5	30	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.32xlarge	128		256	EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c6i.metal	128		256	EBS-Only	50	40	Up to 3.5 GHz 3rd generation Intel Xeon Scalable processors
+c5.large	2		4	EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5.xlarge	4		8	EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5.2xlarge	8		16	EBS-Only	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5.4xlarge	16		32	EBS-Only	Up to 10	4750	Intel Xeon Scalable
+c5.9xlarge	36		72	EBS-Only	10	9500	Intel Xeon Scalable
+c5.12xlarge	48		96	EBS-Only	12	9500	Intel Xeon Scalable
+c5.18xlarge	72		144	EBS-Only	25	19000	Intel Xeon Scalable
+c5.24xlarge	96		192	EBS-Only	25	19000	Intel Xeon Scalable
+c5.metal	96		192	EBS-Only	25	19000	Intel Xeon Scalable
+c5d.large	2		4	1 x 50 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5d.xlarge	4		8	1 x 100 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5d.2xlarge	8		16	1 x 200 NVMe SSD	Up to 10	Up to 4,750	Intel Xeon Scalable
+c5d.4xlarge	16		32	1 x 400 NVMe SSD	Up to 10	4750	Intel Xeon Scalable
+c5d.9xlarge	36		72	1 x 900 NVMe SSD	10	9500	Intel Xeon Scalable
+c5d.12xlarge	48		96	2 x 900 NVMe SSD	12	9500	Intel Xeon Scalable
+c5d.18xlarge	72		144	2 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
+c5d.24xlarge	96		192	4 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
+c5d.metal	96		192	4 x 900 NVMe SSD	25	19000	Intel Xeon Scalable
