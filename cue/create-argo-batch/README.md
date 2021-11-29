@@ -8,6 +8,9 @@ Install cue >= 0.4.0 from..
 
 https://github.com/cue-lang/cue
 
+Then edit vars.cue and set cloud_provider to either "aws" or "gcp".
+
+
 Then run the following command to merge the run list into the workflow template.. 
 
 ```
