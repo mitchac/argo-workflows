@@ -20,7 +20,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 				metadata: name: "workdir"
 				spec: {
 					accessModes: ["ReadWriteOnce"]
-					resources: requests: storage: "\(((__div((7000+acc["mbytes"]), 1))+1)*1)Mi"
+					resources: requests: storage: "\(((__div((10000+acc["mbytes"]), 1))+1)*1)Mi"
 				}
 			}]
 			entrypoint: "singlem-task"
@@ -88,8 +88,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}]
 					resources: requests: {
 						//memory: "3600Mi"
-						memory: "\((__div((1200+2*(__div(acc["mbases"], 1000))), 256))*256)Mi"
-						cpu:    "500m"
+						memory: "\((__div((1800+2*(__div(acc["mbases"], 1000))), 256))*256)Mi"
+						cpu:    "750m"
 					}
 				}
 				_nodeSelector: purpose: "workflow-jobs"
