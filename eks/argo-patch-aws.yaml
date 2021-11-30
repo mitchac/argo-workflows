@@ -1,0 +1,7 @@
+data:
+  containerRuntimeExecutor: pns
+  config: |
+    artifactRepository:
+      s3:
+        bucket: batch-artifact-repository-401305384268
+        endpoint: s3.amazonaws.com

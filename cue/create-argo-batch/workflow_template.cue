@@ -7,8 +7,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 		metadata: {
 			generateName: "singlem-"
 			namespace:    "argo"
-			//labels:
-			// nickname: "\(_data.summary)"
+			labels: nickname: "\(_data.summary)"
 		}
 		spec: {
 			securityContext: {
@@ -54,6 +53,14 @@ merged_templates: [ for acc in _data.sra_accessions {
 						}
 
 					}]
+				}
+				archiveLocation: {
+					archiveLogs: true
+					s3: {
+						endpoint: "s3.amazonaws.com"
+						bucket:   "batch-artifact-repository-401305384268"
+						key:      "test"
+					}
 				}
 				container: {
 					name:  "singlem-gather"
