@@ -1,0 +1,30 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: argo-test
+  region: us-east-1
+  version: "1.21"
+
+managedNodeGroups:
+- name: primary
+  desiredCapacity: 2
+  instanceType: t3.small
+  volumeSize: 100
+- name: workflow-jobs
+  spot: true
+  minSize: 0
+  maxSize: 2
+  instanceType: c5.4xlarge
+  volumeSize: 400
+  labels:
+    purpose: workflow-jobs
+  taints:
+    - key: reserved-pool
+      value: "true"
+      effect: NoSchedule
+  tags:
+      k8s.io/cluster-autoscaler/enabled: "true"
+      k8s.io/cluster-autoscaler/argo-test: "true"
+      k8s.io/cluster-autoscaler/node-template/label/purpose: workflow-jobs
+      k8s.io/cluster-autoscaler/node-template/taint/reserved-pool: "true:NoSchedule"
