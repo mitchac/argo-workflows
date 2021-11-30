@@ -71,15 +71,20 @@ merged_templates: [ for acc in _data.sra_accessions {
                                         }
 				}
 				container: {
-					name:  "singlem-gather"
-					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev30.e97d171"
+					name:  "singlem"
+					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev31.e97d171"
 					env: [{
 						name:  "TMPDIR"
 						value: "/mnt/vol"
 					}]
-					command: ["sh", "-c"]
+					command: ["bash", "-c"]
 					args: [
-						" cd /mnt/vol; python /kingfisher-download/bin/kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m 'aws-http' && ls && /singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table {{inputs.parameters.SRA_accession_num}}.unannotated.singlem.json --threads 1 --singlem-metapackage /mpkg --no-assign-taxonomy && ls /mnt/vol ",
+						"""
+							cd /mnt/vol;
+							kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m 'aws-http' &&
+							ls -l && 
+							/tmp/singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table >(gzip >{{inputs.parameters.SRA_accession_num}}.annotated.singlem.json.gz) --threads 1 --singlem-metapackage /mpkg
+						"""
 					]
 
 					volumeMounts: [{
@@ -101,18 +106,18 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}]
 				outputs: artifacts: [{
 					name: "out-art"
-					path: "/mnt/vol/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+					path: "/mnt/vol/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 					if _cloud_provider == "aws" {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 				}]
