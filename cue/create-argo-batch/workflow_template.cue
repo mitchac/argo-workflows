@@ -42,17 +42,17 @@ merged_templates: [ for acc in _data.sra_accessions {
 						name:  "SRA_accession_num"
 						value: acc["acc"]
 					}]
-					artifacts: [{
-						name: "my-art"
-						path: "/my-artifact"
-						if _cloud_provider == "aws" {
-							s3: _cloud_configs.aws.storage
-						}
-						if _cloud_provider == "gcp" {
-							gcs: _cloud_configs.gcp.storage
-						}
-
-					}]
+//					artifacts: [{
+//						name: "my-art"
+//						path: "/my-artifact"
+//						if _cloud_provider == "aws" {
+//							s3: _cloud_configs.aws.storage
+//						}
+//						if _cloud_provider == "gcp" {
+//							gcs: _cloud_configs.gcp.storage
+//						}
+//
+//					}]
 				}
 				archiveLocation: {
 					archiveLogs: true
