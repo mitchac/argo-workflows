@@ -32,6 +32,7 @@ import logging
 import sys
 import os
 import json
+import random
 
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)),'..')] + sys.path
 
@@ -40,6 +41,7 @@ if __name__ == '__main__':
 
     parent_parser.add_argument('--input-json',required=True, help='JSON format input e.g. merged with "jq -n \'[ inputs ]\' *"')
     parent_parser.add_argument('--nickname',required=True)
+    parent_parser.add_argument('--sample', type=int, help='randomly choose this many runs [default: no sampling]')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -83,6 +85,7 @@ if __name__ == '__main__':
     #   },
     count = 0
     fails = 0
+    entries = []
     for e in j:
         if 'acc' not in e or 'mbases' not in e or 'mbytes' not in e:
             logging.debug("Incomplete metadata for {}".format(e))
@@ -98,9 +101,16 @@ if __name__ == '__main__':
             'mbases': mbases,
             'mbytes': mbytes
         }
-        jo['data']['sra_accessions'].append(e2)
+        entries.append(e2)
         count += 1
-    
+
     logging.info("Consolidated {} SRA accessions, with {} failed due to incomplete metadata".format(count, fails))
+
+    final_entries = entries
+    if args.sample:
+        logging.info("Randomly choosing {} entries".format(args.sample))
+        final_entries = random.sample(entries, args.sample)
+
+    jo['data']['sra_accessions'] = final_entries
 
     json.dump(jo, sys.stdout, indent=4)
