@@ -275,6 +275,7 @@ rules:
   - ""
   resources:
   - secrets
+  - pods.log  
   verbs:
   - get
 ---

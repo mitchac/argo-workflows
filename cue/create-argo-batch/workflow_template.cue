@@ -60,9 +60,15 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}.main.log"
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}"
 						}
 					}
+					if _cloud_provider == "gcp" {
+                                                gcs: {
+                                                        bucket: _cloud_configs.gcp.storage.bucket
+                                                        key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}"
+                                                }
+                                        }
 				}
 				container: {
 					name:  "singlem-gather"
@@ -100,13 +106,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
+							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.unannotated.singlem.json"
 						}
 					}
 				}]
