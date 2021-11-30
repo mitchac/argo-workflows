@@ -56,10 +56,12 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}
 				archiveLocation: {
 					archiveLogs: true
-					s3: {
-						endpoint: "s3.amazonaws.com"
-						bucket:   "batch-artifact-repository-401305384268"
-						key:      "test"
+					if _cloud_provider == "aws" {
+						s3: {
+							endpoint: _cloud_configs.aws.storage.endpoint
+							bucket:   _cloud_configs.aws.storage.bucket
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}.main.log"
+						}
 					}
 				}
 				container: {
