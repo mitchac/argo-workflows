@@ -26,7 +26,7 @@ Then edit vars.cue and set cloud_provider to either "aws" or "gcp" to generate a
 
 Then replace <MY-DATA-FILE.cue> in the following command with the name of your data file in cue format. 
 
-Then run the following command to merge the run list into the workflow template.. 
+Then run the following command to merge the run list into the workflow template and submit to argo.  
 
 ```
 cue eval . ./runlists/<MY-DATA-FILE.cue> --out yaml -p create_argo_batch |yq eval '.merged_templates.[] | splitDoc' - |argo submit - -n argo -o json |jq > submissions/`date +%Y%m%d-%k%M`.argo_submission.json
