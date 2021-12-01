@@ -27,7 +27,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 			ttlStrategy: {
 				secondsAfterCompletion: 3600 // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
 				secondsAfterSuccess:    3600 // Time to live after workflow is successful
-				secondsAfterFailure:    3600
+				secondsAfterFailure:    604800 // 1 week
 			} // Time to live after workflow fails
 			arguments: {
 				parameters: [{
@@ -60,13 +60,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}"
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
 						}
 					}
 					if _cloud_provider == "gcp" {
                                                 gcs: {
                                                         bucket: _cloud_configs.gcp.storage.bucket
-                                                        key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}"
+                                                        key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
                                                 }
                                         }
 				}
@@ -80,6 +80,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					command: ["bash", "-c"]
 					args: [
 						"""
+							echo Processing {{workflow.name}} {{inputs.parameters.SRA_accession_num}};
 							cd /mnt/vol;
 							kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m 'aws-http' &&
 							ls -l && 
@@ -107,17 +108,19 @@ merged_templates: [ for acc in _data.sra_accessions {
 				outputs: artifacts: [{
 					name: "out-art"
 					path: "/mnt/vol/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
+					archive:
+						none: {} // Do not apply the argo default tar.gz since we are already gzipped and it is only 1 file
 					if _cloud_provider == "aws" {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
+							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 				}]
