@@ -37,6 +37,10 @@ merged_templates: [ for acc in _data.sra_accessions {
 			}
 			templates: [{
 				name: "singlem-task"
+				retryStrategy: {
+					limit:       "2"
+					retryPolicy: "Always"
+				}
 				inputs: {
 					parameters: [{
 						name:  "SRA_accession_num"
