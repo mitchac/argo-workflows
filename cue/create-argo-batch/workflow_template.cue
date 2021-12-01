@@ -72,7 +72,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}
 				container: {
 					name:  "singlem"
-					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev31.e97d171"
+					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev32.e97d171"
 					env: [{
 						name:  "TMPDIR"
 						value: "/mnt/vol"
@@ -84,7 +84,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 							cd /mnt/vol;
 							kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m 'aws-http' &&
 							ls -l && 
-							/tmp/singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table >(gzip >{{inputs.parameters.SRA_accession_num}}.annotated.singlem.json.gz) --threads 1 --singlem-metapackage /mpkg
+							pidstat -r 5 -e bash -c '/tmp/singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table >(gzip >{{inputs.parameters.SRA_accession_num}}.annotated.singlem.json.gz) --threads 1 --singlem-metapackage /mpkg' |awk '{print $7}' |sort -rn |head -1 >max_rss
 						"""
 					]
 
@@ -105,7 +105,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 					value:    "true"
 					effect:   "NoSchedule"
 				}]
-				outputs: artifacts: [{
+				outputs: artifacts: [
+				{
 					name: "out-art"
 					path: "/mnt/vol/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 					archive:
@@ -123,7 +124,27 @@ merged_templates: [ for acc in _data.sra_accessions {
 							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
-				}]
+				},
+				{
+					name: "out-art2"
+					path: "/mnt/vol/max_rss"
+					archive:
+						none: {} // Do not apply the argo default tar.gz since we are already gzipped and it is only 1 file
+					if _cloud_provider == "aws" {
+						s3: {
+							endpoint: _cloud_configs.aws.storage.endpoint
+							bucket:   _cloud_configs.aws.storage.bucket
+							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
+						}
+					}
+					if _cloud_provider == "gcp" {
+						gcs: {
+							bucket: _cloud_configs.gcp.storage.bucket
+							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
+						}
+					}
+				}
+				]
 			}]
 		}
 	}

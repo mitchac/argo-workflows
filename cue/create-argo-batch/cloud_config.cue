@@ -14,7 +14,7 @@ _cloud_configs: {
 		storage: {
 			endpoint: "s3.amazonaws.com"
 			bucket: "batch-artifact-repository-401305384268"
-			key:   "test4"
+			key:   "test5"
 		}
 	}
 	gcp: #cloud_config & {
