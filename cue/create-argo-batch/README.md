@@ -31,9 +31,3 @@ Then run the following command to merge the run list into the workflow template.
 ```
 cue eval . ./runlists/<MY-DATA-FILE.cue> --out yaml -p create_argo_batch |yq eval '.merged_templates.[] | splitDoc' - |argo submit - -n argo -o json |jq > submissions/`date +%Y%m%d-%k%M`.argo_submission.json
 ```
-
-..then confirm that you are authenticated to correct k8s cluster, add the correct path to your argo submission in the following command and submit the workflow templates to argo..
-
-```
-argo submit <MY-ARGO-SUBMISSION.json> -n argo
-```
