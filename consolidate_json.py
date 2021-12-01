@@ -42,6 +42,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--input-json',required=True, help='JSON format input e.g. merged with "jq -n \'[ inputs ]\' *"')
     parent_parser.add_argument('--nickname',required=True)
     parent_parser.add_argument('--sample', type=int, help='randomly choose this many runs [default: no sampling]')
+    parent_parser.add_argument('--blacklist', help='file containing list of accessions to ignore [default: no blacklisting]')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -57,6 +58,13 @@ if __name__ == '__main__':
     else:
         loglevel = logging.INFO
     logging.basicConfig(level=loglevel, format='%(asctime)s %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+
+    if args.blacklist:
+        with open(args.blacklist) as f:
+            blacklist = set(f.read().splitlines())
+        logging.info("Loaded blacklist of %d accessions" % len(blacklist))
+    else:
+        blacklist = set()
 
     with open(args.input_json) as f:
         j = json.load(f)
@@ -86,10 +94,15 @@ if __name__ == '__main__':
     count = 0
     fails = 0
     entries = []
+    blacklisted_count = 0
     for e in j:
         if 'acc' not in e or 'mbases' not in e or 'mbytes' not in e:
             logging.debug("Incomplete metadata for {}".format(e))
             fails += 1
+            continue
+        if e['acc'] in blacklist:
+            blacklisted_count += 1
+            logging.debug("Skipping blacklisted accession {}".format(e['acc']))
             continue
 
         mbases = int(e['mbases'])
@@ -105,6 +118,9 @@ if __name__ == '__main__':
         count += 1
 
     logging.info("Consolidated {} SRA accessions, with {} failed due to incomplete metadata".format(count, fails))
+
+    if args.blacklist:
+        logging.info("Ignored {} accessions as they were on the blacklist".format(blacklisted_count))
 
     final_entries = entries
     if args.sample:
