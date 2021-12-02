@@ -28,8 +28,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 			entrypoint: "singlem-task"
 			ttlStrategy: {
 				secondsAfterCompletion: 3600   // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
-				secondsAfterSuccess:    3600   // Time to live after workflow is successful
-				secondsAfterFailure:    604800 // 1 week
+				secondsAfterSuccess:    600   // Time to live after workflow is successful
+				secondsAfterFailure:    10800 // 3 hours
 			} // Time to live after workflow fails
 			arguments: {
 				parameters: [{
@@ -121,7 +121,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}
 
 				}
-				_nodeSelector: purpose: "workflow-jobs"
+				nodeSelector: purpose: "workflow-jobs"
 				tolerations: [{
 					key:      "reserved-pool"
 					operator: "Equal"
