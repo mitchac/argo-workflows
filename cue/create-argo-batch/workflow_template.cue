@@ -5,7 +5,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 		apiVersion: "argoproj.io/v1alpha1"
 		kind:       "Workflow"
 		metadata: {
-			generateName: "singlem-"
+			generateName: "singlem-\(acc["acc_lowercase"]\)"
 			namespace:    "argo"
 			labels: nickname: "\(_data.summary)"
 		}
