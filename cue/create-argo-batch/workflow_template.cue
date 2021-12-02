@@ -1,5 +1,7 @@
 package create_argo_batch
 
+import "list"
+
 merged_templates: [ for acc in _data.sra_accessions {
 	{
 		apiVersion: "argoproj.io/v1alpha1"
@@ -26,8 +28,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 			entrypoint: "singlem-task"
 			ttlStrategy: {
 				secondsAfterCompletion: 3600   // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
-				secondsAfterSuccess:    3600   // Time to live after workflow is successful
-				secondsAfterFailure:    604800 // 1 week
+				secondsAfterSuccess:    600   // Time to live after workflow is successful
+				secondsAfterFailure:    10800 // 3 hours
 			} // Time to live after workflow fails
 			arguments: {
 				parameters: [{
@@ -100,11 +102,15 @@ merged_templates: [ for acc in _data.sra_accessions {
 						// convert mbases to gbases
 						_gbases: div(acc["mbases"], 1000)
 						// the fixed amount of ram
-						_ram_buffer: 1800
+						_ram_buffer: 512
 						// the additional mb of ram we'll add per gbase in the sample
-						_ram_mult: 20
-						// calculate ram required
-						_ram_reqd: _ram_buffer + _ram_mult*_gbases
+						_ram_mult: 60
+						// calculate variable amount of ram
+						_ram_variable: _ram_mult*_gbases
+						// cap variable ram at 3000mb
+						_ram_variable_capped: list.Sort([3000,_ram_variable], list.Ascending)[0]
+						// calculate total ram required
+						_ram_reqd: _ram_buffer + _ram_variable_capped
 						// convert this value to the nearest multiple of 256mb
 						// this is a k8s requirement
 						_ram_nearest_256_Mi: (div(_ram_reqd, 256) * 256)
@@ -115,7 +121,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}
 
 				}
-				_nodeSelector: purpose: "workflow-jobs"
+				nodeSelector: purpose: "workflow-jobs"
 				tolerations: [{
 					key:      "reserved-pool"
 					operator: "Equal"
