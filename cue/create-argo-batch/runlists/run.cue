@@ -5,6 +5,6 @@ _data: {
 	summary:  "argo-first-batch"
 
 	sra_accessions: [
-		{acc: "ERR4374862", mbases: 444, mbytes: 555},
+		{acc: "ERR4374862", acc_lowercase: "err4374862", mbases: 444, mbytes: 555},
 	]
 }
