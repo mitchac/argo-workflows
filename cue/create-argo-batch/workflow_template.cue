@@ -7,7 +7,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 		apiVersion: "argoproj.io/v1alpha1"
 		kind:       "Workflow"
 		metadata: {
-			generateName: "singlem-"
+			generateName: "singlem-"+acc["acc_lowercase"]+"-"
 			namespace:    "argo"
 			labels: nickname: "\(_data.summary)"
 		}
@@ -66,13 +66,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
+							key:      "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
+							key:    "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}"
 						}
 					}
 				}
@@ -138,13 +138,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
+							key:      "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
+							key:    "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/{{workflow.parameters.SRA_accession_num}}.annotated.singlem.json.gz"
 						}
 					}
 				},
@@ -157,13 +157,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 						s3: {
 							endpoint: _cloud_configs.aws.storage.endpoint
 							bucket:   _cloud_configs.aws.storage.bucket
-							key:      "\(_cloud_configs.aws.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
+							key:      "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
 						}
 					}
 					if _cloud_provider == "gcp" {
 						gcs: {
 							bucket: _cloud_configs.gcp.storage.bucket
-							key:    "\(_cloud_configs.gcp.storage.key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
+							key:    "\(_output_storage_key)/{{workflow.name}}-{{workflow.parameters.SRA_accession_num}}/max_rss"
 						}
 					}
 				}

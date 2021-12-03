@@ -5,7 +5,6 @@ package create_argo_batch
 	{
 		endpoint?: string
 		bucket: string
-		key: string
 	}
 }
 
@@ -14,13 +13,11 @@ _cloud_configs: {
 		storage: {
 			endpoint: "s3.amazonaws.com"
 			bucket: "batch-artifact-repository-401305384268"
-			key:   "test6"
 		}
 	}
 	gcp: #cloud_config & {
 		storage: {
 			bucket: "bowerbird-testing-home"
-			key:   "bowerbird"
 		}
 	}
 

@@ -111,6 +111,7 @@ if __name__ == '__main__':
         if str(mbytes) != e['mbytes']: raise Exception("INT format error with {}".format(e))
         e2 = {
             'acc': e['acc'],
+            'acc_lowercase': e['acc'].lower(),
             'mbases': mbases,
             'mbytes': mbytes
         }
