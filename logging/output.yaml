@@ -1,0 +1,24 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Output
+metadata:
+ name: s3-output
+ namespace: logging
+spec:
+ s3:
+   aws_key_id:
+     valueFrom:
+       secretKeyRef:
+         name: logging-s3
+         key: awsAccessKeyId
+   aws_sec_key:
+     valueFrom:
+       secretKeyRef:
+         name: logging-s3
+         key: awsSecretAccessKey
+   s3_bucket: batch-artifact-repository-401305384268
+   s3_region: us-east-1
+   path: logs/${tag}/%Y/%m/%d/
+   buffer:
+     timekey: 10m
+     timekey_wait: 30s
+     timekey_use_utc: true

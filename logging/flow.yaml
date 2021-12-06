@@ -1,0 +1,10 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Flow
+metadata:
+  name: s3-flow
+  namespace: logging
+spec:
+  match:
+    - select: {}
+  localOutputRefs:
+    - s3-output

@@ -33,9 +33,6 @@ managedNodeGroups:
   maxSize: 3
   instanceType: t3.medium
   volumeSize: 150
-  labels:
-    purpose: apps
   tags:
       k8s.io/cluster-autoscaler/enabled: "true"
       k8s.io/cluster-autoscaler/argo-test: "true"
-      k8s.io/cluster-autoscaler/node-template/label/purpose: apps
