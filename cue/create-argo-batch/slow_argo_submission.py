@@ -36,14 +36,7 @@ import tempfile
 import time
 import extern
 
-import itertools
-def iterable_chunks(iterable, n):
-    '''Given an iterable, return it in chunks of size n. In the last chunk, the
-    remaining space is replaced by None entries.
-    '''
-    args = [iter(iterable)] * n
-    return itertools.zip_longest(*args, fillvalue=None)
-
+import queue
 
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)),'..')] + sys.path
 
@@ -53,7 +46,8 @@ if __name__ == '__main__':
     parent_parser.add_argument('--input-json',required=True, help='JSON format input e.g. merged with "jq -n \'[ inputs ]\' *"')
     
     parent_parser.add_argument('--sleep-interval', type=int, help='sleep this many seconds between submissions', default=60*5)
-    parent_parser.add_argument('--batch-size', type=int, help='submit this many each time', default=20)
+    parent_parser.add_argument('--batch-size', type=int, help='submit this many each time')
+    parent_parser.add_argument('--batch-size-file', type=int, help='read from a file which is just a number - submit this many each time')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -89,8 +83,27 @@ if __name__ == '__main__':
     logging.info(f"Found {len(entries)} accessions")
 
     num_submitted = 0
-    for chunk in iterable_chunks(entries, args.batch_size):
-        to_process = list([e for e in chunk if e is not None])
+    qu = queue.Queue(entries)
+    for e in entries:
+        qu.put(e)
+
+    if args.batch_size:
+        batch_size = args.batch_size
+    elif args.batch_size_file:
+        batch_size = 0
+    else:
+        raise Exception("Need batch size or batch size file")
+
+    while not qu.empty():
+        if args.batch_size_file:
+            with open(args.batch_size_file) as f:
+                prev = batch_size
+                batch_size = int(f.read().strip())
+                if prev != batch_size:
+                    logging.info(f"Changing batch size to {batch_size} entries")
+        chunk = []
+        while not qu.empty() and len(chunk) < batch_size:
+            chunk.append(qu.get())
 
         # Create cue format manually
 
@@ -126,7 +139,7 @@ if __name__ == '__main__':
 
             logging.info("Creating workflow YAML and submitting ..")
             extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
-            extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/`date +%Y%m%d-%k%M`.argo_submission.json")
+            extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%k%M`.argo_submission.json")
             logging.info("Submitted")
 
             num_submitted += len(chunk)
