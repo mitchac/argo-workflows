@@ -47,7 +47,7 @@ if __name__ == '__main__':
     
     parent_parser.add_argument('--sleep-interval', type=int, help='sleep this many seconds between submissions', default=60*5)
     parent_parser.add_argument('--batch-size', type=int, help='submit this many each time')
-    parent_parser.add_argument('--batch-size-file', type=int, help='read from a file which is just a number - submit this many each time')
+    parent_parser.add_argument('--batch-size-file', help='read from a file which is just a number - submit this many each time')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     logging.info(f"Found {len(entries)} accessions")
 
     num_submitted = 0
-    qu = queue.Queue(entries)
+    qu = queue.Queue()
     for e in entries:
         qu.put(e)
 
