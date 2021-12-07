@@ -10,3 +10,4 @@ spec:
           log: 'yes' 
   localOutputRefs:
     - s3-output
+    - loki-output
