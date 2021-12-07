@@ -9,10 +9,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 		metadata: {
 			generateName: "singlem-" + acc["acc_lowercase"] + "-"
 			namespace:    "argo"
-			labels: {
-				nickname:   "\(_data.summary)"
-				log_action: "log"
-			}}
+			labels: nickname: "\(_data.summary)"
+		}
 		spec: {
 			securityContext: {
 				runAsNonRoot: true

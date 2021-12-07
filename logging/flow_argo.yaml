@@ -5,6 +5,8 @@ metadata:
   namespace: argo
 spec:
   match:
-    - select: {}  
+    - select: 
+        labels:
+          log: 'yes' 
   localOutputRefs:
     - s3-output
