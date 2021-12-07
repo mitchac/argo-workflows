@@ -17,7 +17,7 @@ spec:
          key: awsSecretAccessKey
    s3_bucket: batch-artifact-repository-401305384268
    s3_region: us-east-1
-   path: logs/${tag}/%Y/%m/%d/
+   path: logs/${tag}/
    buffer:
      timekey: 10m
      timekey_wait: 30s
