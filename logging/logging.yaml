@@ -5,5 +5,10 @@ metadata:
   namespace: logging
 spec:
   fluentd: {}
-  fluentbit: {}         
+  fluentbit:
+    tolerations:
+      - key: reserved-pool
+        operator: Equal
+        value: "true"
+        effect: NoSchedule
   controlNamespace: logging
