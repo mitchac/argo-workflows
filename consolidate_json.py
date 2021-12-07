@@ -43,6 +43,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--nickname',required=True)
     parent_parser.add_argument('--sample', type=int, help='randomly choose this many runs [default: no sampling]')
     parent_parser.add_argument('--blacklist', help='file containing list of accessions to ignore [default: no blacklisting]')
+    parent_parser.add_argument('--max-gbp', type=float, help='maximum Gbp of runs to include [default: no max]')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -109,6 +110,9 @@ if __name__ == '__main__':
         mbytes = int(e['mbytes'])
         if str(mbases) != e['mbases']: raise Exception("INT format error with {}".format(e))
         if str(mbytes) != e['mbytes']: raise Exception("INT format error with {}".format(e))
+        if args.max_gbp and (mbases / 1000) > args.max_gbp:
+            logging.debug("Skipping {} as it is too large".format(e['acc']))
+            continue
         e2 = {
             'acc': e['acc'],
             'acc_lowercase': e['acc'].lower(),
