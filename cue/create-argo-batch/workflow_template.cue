@@ -124,6 +124,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}
 
 				}
+				if _node_restrictions == "yes" {
 				nodeSelector: purpose: "workflow-jobs"
 				tolerations: [{
 					key:      "reserved-pool"
@@ -131,6 +132,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					value:    "true"
 					effect:   "NoSchedule"
 				}]
+				}
 				outputs: artifacts: [
 					{
 						name: "out-art"

@@ -1,7 +1,7 @@
 package create_argo_batch
 
 _data: {
-	summary: "50-ish-samples"
+	summary: "50_ish_samples"
 	sra_accessions: [{
 		acc:    "ERR2738607"
 		mbases: 808
