@@ -40,8 +40,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 			templates: [{
 				name: "singlem-task"
 				retryStrategy: {
-					limit:       "2"
-					retryPolicy: "Always"
+					limit:       "3"
+					retryPolicy: "OnError"
 				}
 				inputs: {
 					parameters: [{
