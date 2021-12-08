@@ -125,13 +125,13 @@ merged_templates: [ for acc in _data.sra_accessions {
 
 				}
 				if _node_restrictions == "yes" {
-				nodeSelector: purpose: "workflow-jobs"
-				tolerations: [{
-					key:      "reserved-pool"
-					operator: "Equal"
-					value:    "true"
-					effect:   "NoSchedule"
-				}]
+					nodeSelector: purpose: "workflow-jobs"
+					tolerations: [{
+						key:      "reserved-pool"
+						operator: "Equal"
+						value:    "true"
+						effect:   "NoSchedule"
+					}]
 				}
 				outputs: artifacts: [
 					{
