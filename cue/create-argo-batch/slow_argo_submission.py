@@ -48,6 +48,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--sleep-interval', type=int, help='sleep this many seconds between submissions', default=60*5)
     parent_parser.add_argument('--batch-size', type=int, help='submit this many each time')
     parent_parser.add_argument('--batch-size-file', help='read from a file which is just a number - submit this many each time')
+    parent_parser.add_argument('--whitelist', help='Only submit accessions that are in this file')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -80,12 +81,17 @@ if __name__ == '__main__':
 
     entries = j['data']['sra_accessions']
 
-    logging.info(f"Found {len(entries)} accessions")
+    logging.info(f"Found {len(entries)} accessions from JSON input")
+
+    if args.whitelist:
+        with open(args.whitelist) as f:
+            whitelist = [s.strip() for s in f.readlines()]
 
     num_submitted = 0
     qu = queue.Queue()
     for e in entries:
-        qu.put(e)
+        if not args.whitelist e['acc'] in whitelist:
+            qu.put(e)
 
     if args.batch_size:
         batch_size = args.batch_size

@@ -78,7 +78,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}
 				container: {
 					name:  "singlem"
-					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev34.e97d171"
+					image: "gcr.io/maximal-dynamo-308105/singlem:0.13.2-dev36.e97d171"
 					env: [{
 						name:  "TMPDIR"
 						value: "/mnt/vol"
