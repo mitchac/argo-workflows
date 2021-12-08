@@ -48,6 +48,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--sleep-interval', type=int, help='sleep this many seconds between submissions', default=60*5)
     parent_parser.add_argument('--batch-size', type=int, help='submit this many each time')
     parent_parser.add_argument('--batch-size-file', help='read from a file which is just a number - submit this many each time')
+    parent_parser.add_argument('--blacklist', help='Ignore accessions that are in this file')
     parent_parser.add_argument('--whitelist', help='Only submit accessions that are in this file')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
@@ -85,13 +86,17 @@ if __name__ == '__main__':
 
     if args.whitelist:
         with open(args.whitelist) as f:
-            whitelist = [s.strip() for s in f.readlines()]
+            whitelist = list([s.strip() for s in f.readlines()])
+    if args.blacklist:
+        with open(args.blacklist) as f:
+            blacklist = list([s.strip() for s in f.readlines()])
 
     num_submitted = 0
     qu = queue.Queue()
     for e in entries:
-        if not args.whitelist e['acc'] in whitelist:
-            qu.put(e)
+        if args.whitelist is None or e['acc'] in whitelist:
+            if args.blacklist is None or e['acc'] not in blacklist:
+                qu.put(e)
 
     if args.batch_size:
         batch_size = args.batch_size
