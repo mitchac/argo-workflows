@@ -97,6 +97,7 @@ if __name__ == '__main__':
         if args.whitelist is None or e['acc'] in whitelist:
             if args.blacklist is None or e['acc'] not in blacklist:
                 qu.put(e)
+    logging.info(f"Found {qu.qsize()} accessions to submit after white and blacklist filtering")
 
     if args.batch_size:
         batch_size = args.batch_size
@@ -150,8 +151,18 @@ if __name__ == '__main__':
 
             logging.info("Creating workflow YAML and submitting ..")
             extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
-            extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%k%M`.argo_submission.json")
-            logging.info("Submitted")
+
+            # Keep trying submission, in case of head node failure.
+            while True:
+                try:
+                    extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%k%M`.argo_submission.json")
+                except extern.ExternCalledProcessError as e:
+                    logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
+                    time.sleep(args.sleep_interval)
+                    continue
+
+                logging.info("Submitted")
+                break
 
             num_submitted += len(chunk)
             logging.info(f"Submitted {num_submitted} out of {len(entries)} i.e. {round(float(num_submitted)/len(entries)*100)}%")
