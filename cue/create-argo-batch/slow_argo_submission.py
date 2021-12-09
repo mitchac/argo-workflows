@@ -97,7 +97,8 @@ if __name__ == '__main__':
         if args.whitelist is None or e['acc'] in whitelist:
             if args.blacklist is None or e['acc'] not in blacklist:
                 qu.put(e)
-    logging.info(f"Found {qu.qsize()} accessions to submit after white and blacklist filtering")
+    total_to_submit = qu.qsize()
+    logging.info(f"Found {total_to_submit} accessions to submit after white and blacklist filtering")
 
     if args.batch_size:
         batch_size = args.batch_size
@@ -165,9 +166,9 @@ if __name__ == '__main__':
                 break
 
             num_submitted += len(chunk)
-            logging.info(f"Submitted {num_submitted} out of {len(entries)} i.e. {round(float(num_submitted)/len(entries)*100)}%")
+            logging.info(f"Submitted {num_submitted} out of {total_to_submit} i.e. {round(float(num_submitted)/total_to_submit*100)}%")
 
-            if num_submitted < len(entries):
+            if num_submitted < total_to_submit:
                 logging.info("sleeping ..")
                 time.sleep(args.sleep_interval)
 
