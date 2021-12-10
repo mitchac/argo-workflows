@@ -102,7 +102,10 @@ merged_templates: [ for acc in _data.sra_accessions {
 						mountPath: "/mnt/vol"
 					}]
 					resources: {
-						limits: cpu: "1000m"
+						limits: {
+							cpu: "1000m"
+							memory: "3584Mi"
+						}
 						requests: {
 							// convert mbases to gbases
 							_gbases: div(acc["mbases"], 1000)
