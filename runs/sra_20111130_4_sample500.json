@@ -1,0 +1,3007 @@
+{
+    "data": {
+        "summary": "sra_20111130_4_sample500",
+        "sra_accessions": [
+            {
+                "acc": "ERR5083870",
+                "acc_lowercase": "err5083870",
+                "mbases": 1598,
+                "mbytes": 462
+            },
+            {
+                "acc": "SRR12081689",
+                "acc_lowercase": "srr12081689",
+                "mbases": 1176,
+                "mbytes": 424
+            },
+            {
+                "acc": "ERR7014929",
+                "acc_lowercase": "err7014929",
+                "mbases": 1604,
+                "mbytes": 744
+            },
+            {
+                "acc": "SRR6877388",
+                "acc_lowercase": "srr6877388",
+                "mbases": 3166,
+                "mbytes": 1303
+            },
+            {
+                "acc": "ERR1302686",
+                "acc_lowercase": "err1302686",
+                "mbases": 703,
+                "mbytes": 418
+            },
+            {
+                "acc": "ERR4328431",
+                "acc_lowercase": "err4328431",
+                "mbases": 318,
+                "mbytes": 99
+            },
+            {
+                "acc": "SRR10852243",
+                "acc_lowercase": "srr10852243",
+                "mbases": 11345,
+                "mbytes": 3231
+            },
+            {
+                "acc": "ERR2017663",
+                "acc_lowercase": "err2017663",
+                "mbases": 4551,
+                "mbytes": 3159
+            },
+            {
+                "acc": "SRR12907733",
+                "acc_lowercase": "srr12907733",
+                "mbases": 511,
+                "mbytes": 226
+            },
+            {
+                "acc": "ERR3350638",
+                "acc_lowercase": "err3350638",
+                "mbases": 127,
+                "mbytes": 50
+            },
+            {
+                "acc": "ERR1913464",
+                "acc_lowercase": "err1913464",
+                "mbases": 502,
+                "mbytes": 181
+            },
+            {
+                "acc": "SRR6828611",
+                "acc_lowercase": "srr6828611",
+                "mbases": 1228,
+                "mbytes": 528
+            },
+            {
+                "acc": "SRR12114796",
+                "acc_lowercase": "srr12114796",
+                "mbases": 1003,
+                "mbytes": 608
+            },
+            {
+                "acc": "ERR2013569",
+                "acc_lowercase": "err2013569",
+                "mbases": 7509,
+                "mbytes": 5403
+            },
+            {
+                "acc": "SRR516947",
+                "acc_lowercase": "srr516947",
+                "mbases": 2365,
+                "mbytes": 1567
+            },
+            {
+                "acc": "SRR8626113",
+                "acc_lowercase": "srr8626113",
+                "mbases": 117,
+                "mbytes": 62
+            },
+            {
+                "acc": "ERR589642",
+                "acc_lowercase": "err589642",
+                "mbases": 6022,
+                "mbytes": 4771
+            },
+            {
+                "acc": "SRR7227961",
+                "acc_lowercase": "srr7227961",
+                "mbases": 1696,
+                "mbytes": 645
+            },
+            {
+                "acc": "ERR3277220",
+                "acc_lowercase": "err3277220",
+                "mbases": 383,
+                "mbytes": 140
+            },
+            {
+                "acc": "SRR11803529",
+                "acc_lowercase": "srr11803529",
+                "mbases": 14196,
+                "mbytes": 4399
+            },
+            {
+                "acc": "SRR3644024",
+                "acc_lowercase": "srr3644024",
+                "mbases": 411,
+                "mbytes": 173
+            },
+            {
+                "acc": "ERR5738674",
+                "acc_lowercase": "err5738674",
+                "mbases": 4214,
+                "mbytes": 1395
+            },
+            {
+                "acc": "SRR3181918",
+                "acc_lowercase": "srr3181918",
+                "mbases": 728,
+                "mbytes": 461
+            },
+            {
+                "acc": "ERR1756284",
+                "acc_lowercase": "err1756284",
+                "mbases": 773,
+                "mbytes": 532
+            },
+            {
+                "acc": "ERR2757376",
+                "acc_lowercase": "err2757376",
+                "mbases": 483,
+                "mbytes": 195
+            },
+            {
+                "acc": "ERR1915009",
+                "acc_lowercase": "err1915009",
+                "mbases": 322,
+                "mbytes": 119
+            },
+            {
+                "acc": "SRR10850310",
+                "acc_lowercase": "srr10850310",
+                "mbases": 1093,
+                "mbytes": 580
+            },
+            {
+                "acc": "SRR5483006",
+                "acc_lowercase": "srr5483006",
+                "mbases": 9784,
+                "mbytes": 3541
+            },
+            {
+                "acc": "SRR7984018",
+                "acc_lowercase": "srr7984018",
+                "mbases": 1159,
+                "mbytes": 467
+            },
+            {
+                "acc": "SRR10682049",
+                "acc_lowercase": "srr10682049",
+                "mbases": 7177,
+                "mbytes": 2316
+            },
+            {
+                "acc": "ERR3594025",
+                "acc_lowercase": "err3594025",
+                "mbases": 17887,
+                "mbytes": 7158
+            },
+            {
+                "acc": "SRR12479740",
+                "acc_lowercase": "srr12479740",
+                "mbases": 3434,
+                "mbytes": 1064
+            },
+            {
+                "acc": "ERR1135416",
+                "acc_lowercase": "err1135416",
+                "mbases": 5774,
+                "mbytes": 4089
+            },
+            {
+                "acc": "ERR3179160",
+                "acc_lowercase": "err3179160",
+                "mbases": 542,
+                "mbytes": 311
+            },
+            {
+                "acc": "SRR8950052",
+                "acc_lowercase": "srr8950052",
+                "mbases": 1789,
+                "mbytes": 627
+            },
+            {
+                "acc": "SRR11412979",
+                "acc_lowercase": "srr11412979",
+                "mbases": 5933,
+                "mbytes": 2322
+            },
+            {
+                "acc": "SRR5570995",
+                "acc_lowercase": "srr5570995",
+                "mbases": 3569,
+                "mbytes": 1226
+            },
+            {
+                "acc": "SRR13825971",
+                "acc_lowercase": "srr13825971",
+                "mbases": 14056,
+                "mbytes": 4526
+            },
+            {
+                "acc": "SRR8929710",
+                "acc_lowercase": "srr8929710",
+                "mbases": 2553,
+                "mbytes": 1523
+            },
+            {
+                "acc": "SRR7042928",
+                "acc_lowercase": "srr7042928",
+                "mbases": 1456,
+                "mbytes": 605
+            },
+            {
+                "acc": "ERR3061024",
+                "acc_lowercase": "err3061024",
+                "mbases": 316,
+                "mbytes": 113
+            },
+            {
+                "acc": "SRR11125860",
+                "acc_lowercase": "srr11125860",
+                "mbases": 618,
+                "mbytes": 180
+            },
+            {
+                "acc": "SRR13743410",
+                "acc_lowercase": "srr13743410",
+                "mbases": 12838,
+                "mbytes": 3974
+            },
+            {
+                "acc": "SRR10432460",
+                "acc_lowercase": "srr10432460",
+                "mbases": 2923,
+                "mbytes": 1203
+            },
+            {
+                "acc": "SRR6488132",
+                "acc_lowercase": "srr6488132",
+                "mbases": 754,
+                "mbytes": 375
+            },
+            {
+                "acc": "ERR4326233",
+                "acc_lowercase": "err4326233",
+                "mbases": 2983,
+                "mbytes": 1361
+            },
+            {
+                "acc": "SRR7638731",
+                "acc_lowercase": "srr7638731",
+                "mbases": 4472,
+                "mbytes": 3025
+            },
+            {
+                "acc": "ERR589576",
+                "acc_lowercase": "err589576",
+                "mbases": 5583,
+                "mbytes": 4132
+            },
+            {
+                "acc": "SRR11276999",
+                "acc_lowercase": "srr11276999",
+                "mbases": 1479,
+                "mbytes": 622
+            },
+            {
+                "acc": "ERR4083526",
+                "acc_lowercase": "err4083526",
+                "mbases": 422,
+                "mbytes": 166
+            },
+            {
+                "acc": "SRR10800995",
+                "acc_lowercase": "srr10800995",
+                "mbases": 11111,
+                "mbytes": 3212
+            },
+            {
+                "acc": "SRR8731637",
+                "acc_lowercase": "srr8731637",
+                "mbases": 362,
+                "mbytes": 244
+            },
+            {
+                "acc": "SRR2222383",
+                "acc_lowercase": "srr2222383",
+                "mbases": 148,
+                "mbytes": 80
+            },
+            {
+                "acc": "SRR2177359",
+                "acc_lowercase": "srr2177359",
+                "mbases": 1145,
+                "mbytes": 801
+            },
+            {
+                "acc": "SRR12711457",
+                "acc_lowercase": "srr12711457",
+                "mbases": 7816,
+                "mbytes": 2267
+            },
+            {
+                "acc": "ERR6473120",
+                "acc_lowercase": "err6473120",
+                "mbases": 3530,
+                "mbytes": 1369
+            },
+            {
+                "acc": "SRR7769771",
+                "acc_lowercase": "srr7769771",
+                "mbases": 185,
+                "mbytes": 106
+            },
+            {
+                "acc": "SRR13495930",
+                "acc_lowercase": "srr13495930",
+                "mbases": 1200,
+                "mbytes": 496
+            },
+            {
+                "acc": "ERR3179124",
+                "acc_lowercase": "err3179124",
+                "mbases": 2137,
+                "mbytes": 1201
+            },
+            {
+                "acc": "ERR4577680",
+                "acc_lowercase": "err4577680",
+                "mbases": 114,
+                "mbytes": 708
+            },
+            {
+                "acc": "ERR1712024",
+                "acc_lowercase": "err1712024",
+                "mbases": 21146,
+                "mbytes": 14231
+            },
+            {
+                "acc": "SRR10277376",
+                "acc_lowercase": "srr10277376",
+                "mbases": 884,
+                "mbytes": 301
+            },
+            {
+                "acc": "SRR14369213",
+                "acc_lowercase": "srr14369213",
+                "mbases": 6265,
+                "mbytes": 1983
+            },
+            {
+                "acc": "SRR7057655",
+                "acc_lowercase": "srr7057655",
+                "mbases": 6734,
+                "mbytes": 2510
+            },
+            {
+                "acc": "ERR3191965",
+                "acc_lowercase": "err3191965",
+                "mbases": 940,
+                "mbytes": 386
+            },
+            {
+                "acc": "ERR596005",
+                "acc_lowercase": "err596005",
+                "mbases": 1411,
+                "mbytes": 776
+            },
+            {
+                "acc": "SRR5946932",
+                "acc_lowercase": "srr5946932",
+                "mbases": 1842,
+                "mbytes": 642
+            },
+            {
+                "acc": "SRR11296573",
+                "acc_lowercase": "srr11296573",
+                "mbases": 274,
+                "mbytes": 93
+            },
+            {
+                "acc": "SRR10692604",
+                "acc_lowercase": "srr10692604",
+                "mbases": 14204,
+                "mbytes": 4378
+            },
+            {
+                "acc": "ERR4337810",
+                "acc_lowercase": "err4337810",
+                "mbases": 131,
+                "mbytes": 102
+            },
+            {
+                "acc": "ERR3593099",
+                "acc_lowercase": "err3593099",
+                "mbases": 2330,
+                "mbytes": 924
+            },
+            {
+                "acc": "SRR9040403",
+                "acc_lowercase": "srr9040403",
+                "mbases": 10032,
+                "mbytes": 4403
+            },
+            {
+                "acc": "SRR6051713",
+                "acc_lowercase": "srr6051713",
+                "mbases": 1681,
+                "mbytes": 750
+            },
+            {
+                "acc": "SRR5677843",
+                "acc_lowercase": "srr5677843",
+                "mbases": 7600,
+                "mbytes": 2826
+            },
+            {
+                "acc": "SRR12977061",
+                "acc_lowercase": "srr12977061",
+                "mbases": 14827,
+                "mbytes": 6195
+            },
+            {
+                "acc": "ERR2143795",
+                "acc_lowercase": "err2143795",
+                "mbases": 564,
+                "mbytes": 306
+            },
+            {
+                "acc": "ERR3597985",
+                "acc_lowercase": "err3597985",
+                "mbases": 397,
+                "mbytes": 162
+            },
+            {
+                "acc": "SRR2189956",
+                "acc_lowercase": "srr2189956",
+                "mbases": 526,
+                "mbytes": 340
+            },
+            {
+                "acc": "SRR5002340",
+                "acc_lowercase": "srr5002340",
+                "mbases": 10013,
+                "mbytes": 5270
+            },
+            {
+                "acc": "ERR2197817",
+                "acc_lowercase": "err2197817",
+                "mbases": 1868,
+                "mbytes": 702
+            },
+            {
+                "acc": "ERR3574792",
+                "acc_lowercase": "err3574792",
+                "mbases": 1587,
+                "mbytes": 619
+            },
+            {
+                "acc": "ERR2436189",
+                "acc_lowercase": "err2436189",
+                "mbases": 1479,
+                "mbytes": 544
+            },
+            {
+                "acc": "ERR6349607",
+                "acc_lowercase": "err6349607",
+                "mbases": 11116,
+                "mbytes": 7142
+            },
+            {
+                "acc": "ERR2738639",
+                "acc_lowercase": "err2738639",
+                "mbases": 808,
+                "mbytes": 496
+            },
+            {
+                "acc": "SRR5196773",
+                "acc_lowercase": "srr5196773",
+                "mbases": 668,
+                "mbytes": 303
+            },
+            {
+                "acc": "SRR15679537",
+                "acc_lowercase": "srr15679537",
+                "mbases": 832,
+                "mbytes": 265
+            },
+            {
+                "acc": "ERR3180588",
+                "acc_lowercase": "err3180588",
+                "mbases": 142,
+                "mbytes": 87
+            },
+            {
+                "acc": "SRR13348800",
+                "acc_lowercase": "srr13348800",
+                "mbases": 2278,
+                "mbytes": 769
+            },
+            {
+                "acc": "SRR5665028",
+                "acc_lowercase": "srr5665028",
+                "mbases": 862,
+                "mbytes": 423
+            },
+            {
+                "acc": "SRR11563891",
+                "acc_lowercase": "srr11563891",
+                "mbases": 28922,
+                "mbytes": 8311
+            },
+            {
+                "acc": "SRR13022425",
+                "acc_lowercase": "srr13022425",
+                "mbases": 2373,
+                "mbytes": 792
+            },
+            {
+                "acc": "ERR3593932",
+                "acc_lowercase": "err3593932",
+                "mbases": 2226,
+                "mbytes": 926
+            },
+            {
+                "acc": "SRR4408123",
+                "acc_lowercase": "srr4408123",
+                "mbases": 1428,
+                "mbytes": 1008
+            },
+            {
+                "acc": "SRR5967361",
+                "acc_lowercase": "srr5967361",
+                "mbases": 3308,
+                "mbytes": 1858
+            },
+            {
+                "acc": "SRR10595542",
+                "acc_lowercase": "srr10595542",
+                "mbases": 9878,
+                "mbytes": 3146
+            },
+            {
+                "acc": "SRR14860555",
+                "acc_lowercase": "srr14860555",
+                "mbases": 3152,
+                "mbytes": 953
+            },
+            {
+                "acc": "SRR13826066",
+                "acc_lowercase": "srr13826066",
+                "mbases": 19326,
+                "mbytes": 6196
+            },
+            {
+                "acc": "SRR13271819",
+                "acc_lowercase": "srr13271819",
+                "mbases": 3813,
+                "mbytes": 1309
+            },
+            {
+                "acc": "ERR5244004",
+                "acc_lowercase": "err5244004",
+                "mbases": 3062,
+                "mbytes": 1215
+            },
+            {
+                "acc": "SRR3643775",
+                "acc_lowercase": "srr3643775",
+                "mbases": 414,
+                "mbytes": 168
+            },
+            {
+                "acc": "SRR12464010",
+                "acc_lowercase": "srr12464010",
+                "mbases": 2894,
+                "mbytes": 1308
+            },
+            {
+                "acc": "SRR13933268",
+                "acc_lowercase": "srr13933268",
+                "mbases": 6161,
+                "mbytes": 2216
+            },
+            {
+                "acc": "SRR12352216",
+                "acc_lowercase": "srr12352216",
+                "mbases": 12809,
+                "mbytes": 4412
+            },
+            {
+                "acc": "SRR6958906",
+                "acc_lowercase": "srr6958906",
+                "mbases": 4661,
+                "mbytes": 1982
+            },
+            {
+                "acc": "SRR1196607",
+                "acc_lowercase": "srr1196607",
+                "mbases": 1540,
+                "mbytes": 971
+            },
+            {
+                "acc": "SRR12285253",
+                "acc_lowercase": "srr12285253",
+                "mbases": 7723,
+                "mbytes": 2435
+            },
+            {
+                "acc": "SRR3989338",
+                "acc_lowercase": "srr3989338",
+                "mbases": 48172,
+                "mbytes": 30461
+            },
+            {
+                "acc": "SRR13004965",
+                "acc_lowercase": "srr13004965",
+                "mbases": 2863,
+                "mbytes": 1385
+            },
+            {
+                "acc": "SRR4892811",
+                "acc_lowercase": "srr4892811",
+                "mbases": 2853,
+                "mbytes": 1106
+            },
+            {
+                "acc": "SRR12350677",
+                "acc_lowercase": "srr12350677",
+                "mbases": 11637,
+                "mbytes": 4273
+            },
+            {
+                "acc": "SRR3190984",
+                "acc_lowercase": "srr3190984",
+                "mbases": 2254,
+                "mbytes": 1223
+            },
+            {
+                "acc": "SRR3988932",
+                "acc_lowercase": "srr3988932",
+                "mbases": 243,
+                "mbytes": 121
+            },
+            {
+                "acc": "SRR14935060",
+                "acc_lowercase": "srr14935060",
+                "mbases": 4752,
+                "mbytes": 1660
+            },
+            {
+                "acc": "ERR4352527",
+                "acc_lowercase": "err4352527",
+                "mbases": 11023,
+                "mbytes": 4548
+            },
+            {
+                "acc": "ERR3434554",
+                "acc_lowercase": "err3434554",
+                "mbases": 107,
+                "mbytes": 43
+            },
+            {
+                "acc": "SRR8573805",
+                "acc_lowercase": "srr8573805",
+                "mbases": 3659,
+                "mbytes": 1767
+            },
+            {
+                "acc": "ERR4163264",
+                "acc_lowercase": "err4163264",
+                "mbases": 2518,
+                "mbytes": 1076
+            },
+            {
+                "acc": "SRR12824677",
+                "acc_lowercase": "srr12824677",
+                "mbases": 2178,
+                "mbytes": 922
+            },
+            {
+                "acc": "SRR12529186",
+                "acc_lowercase": "srr12529186",
+                "mbases": 22957,
+                "mbytes": 7137
+            },
+            {
+                "acc": "ERR4335051",
+                "acc_lowercase": "err4335051",
+                "mbases": 7825,
+                "mbytes": 2413
+            },
+            {
+                "acc": "ERR719902",
+                "acc_lowercase": "err719902",
+                "mbases": 808,
+                "mbytes": 473
+            },
+            {
+                "acc": "ERR3586732",
+                "acc_lowercase": "err3586732",
+                "mbases": 5532,
+                "mbytes": 3445
+            },
+            {
+                "acc": "SRR2231381",
+                "acc_lowercase": "srr2231381",
+                "mbases": 564,
+                "mbytes": 338
+            },
+            {
+                "acc": "SRR12105471",
+                "acc_lowercase": "srr12105471",
+                "mbases": 752,
+                "mbytes": 356
+            },
+            {
+                "acc": "SRR5720309",
+                "acc_lowercase": "srr5720309",
+                "mbases": 6162,
+                "mbytes": 2540
+            },
+            {
+                "acc": "SRR918167",
+                "acc_lowercase": "srr918167",
+                "mbases": 386,
+                "mbytes": 225
+            },
+            {
+                "acc": "SRR7500770",
+                "acc_lowercase": "srr7500770",
+                "mbases": 2781,
+                "mbytes": 1180
+            },
+            {
+                "acc": "SRR10682464",
+                "acc_lowercase": "srr10682464",
+                "mbases": 6056,
+                "mbytes": 2275
+            },
+            {
+                "acc": "SRR14278020",
+                "acc_lowercase": "srr14278020",
+                "mbases": 692,
+                "mbytes": 257
+            },
+            {
+                "acc": "SRR7892478",
+                "acc_lowercase": "srr7892478",
+                "mbases": 1052,
+                "mbytes": 480
+            },
+            {
+                "acc": "SRR1425964",
+                "acc_lowercase": "srr1425964",
+                "mbases": 282,
+                "mbytes": 137
+            },
+            {
+                "acc": "SRR7629274",
+                "acc_lowercase": "srr7629274",
+                "mbases": 11828,
+                "mbytes": 5714
+            },
+            {
+                "acc": "SRR7124840",
+                "acc_lowercase": "srr7124840",
+                "mbases": 11930,
+                "mbytes": 4456
+            },
+            {
+                "acc": "ERR1293844",
+                "acc_lowercase": "err1293844",
+                "mbases": 1430,
+                "mbytes": 963
+            },
+            {
+                "acc": "SRR13122234",
+                "acc_lowercase": "srr13122234",
+                "mbases": 2211,
+                "mbytes": 708
+            },
+            {
+                "acc": "SRR7750081",
+                "acc_lowercase": "srr7750081",
+                "mbases": 6845,
+                "mbytes": 2874
+            },
+            {
+                "acc": "ERR1756192",
+                "acc_lowercase": "err1756192",
+                "mbases": 110,
+                "mbytes": 83
+            },
+            {
+                "acc": "SRR12326811",
+                "acc_lowercase": "srr12326811",
+                "mbases": 8937,
+                "mbytes": 2826
+            },
+            {
+                "acc": "SRR3933448",
+                "acc_lowercase": "srr3933448",
+                "mbases": 2819,
+                "mbytes": 1145
+            },
+            {
+                "acc": "SRR3313120",
+                "acc_lowercase": "srr3313120",
+                "mbases": 8183,
+                "mbytes": 4170
+            },
+            {
+                "acc": "ERR4335085",
+                "acc_lowercase": "err4335085",
+                "mbases": 7222,
+                "mbytes": 2264
+            },
+            {
+                "acc": "DRR232513",
+                "acc_lowercase": "drr232513",
+                "mbases": 1343,
+                "mbytes": 744
+            },
+            {
+                "acc": "SRR1535387",
+                "acc_lowercase": "srr1535387",
+                "mbases": 10165,
+                "mbytes": 6886
+            },
+            {
+                "acc": "ERR2193946",
+                "acc_lowercase": "err2193946",
+                "mbases": 491,
+                "mbytes": 270
+            },
+            {
+                "acc": "SRR2189225",
+                "acc_lowercase": "srr2189225",
+                "mbases": 1263,
+                "mbytes": 824
+            },
+            {
+                "acc": "SRR15679816",
+                "acc_lowercase": "srr15679816",
+                "mbases": 759,
+                "mbytes": 405
+            },
+            {
+                "acc": "SRR11829128",
+                "acc_lowercase": "srr11829128",
+                "mbases": 7882,
+                "mbytes": 2322
+            },
+            {
+                "acc": "SRR12396210",
+                "acc_lowercase": "srr12396210",
+                "mbases": 2168,
+                "mbytes": 728
+            },
+            {
+                "acc": "ERR1884056",
+                "acc_lowercase": "err1884056",
+                "mbases": 1023,
+                "mbytes": 511
+            },
+            {
+                "acc": "SRR1749370",
+                "acc_lowercase": "srr1749370",
+                "mbases": 831,
+                "mbytes": 333
+            },
+            {
+                "acc": "SRR8606917",
+                "acc_lowercase": "srr8606917",
+                "mbases": 1538,
+                "mbytes": 926
+            },
+            {
+                "acc": "SRR7121070",
+                "acc_lowercase": "srr7121070",
+                "mbases": 9776,
+                "mbytes": 4441
+            },
+            {
+                "acc": "SRR5322466",
+                "acc_lowercase": "srr5322466",
+                "mbases": 293,
+                "mbytes": 178
+            },
+            {
+                "acc": "SRR7993561",
+                "acc_lowercase": "srr7993561",
+                "mbases": 872,
+                "mbytes": 361
+            },
+            {
+                "acc": "ERR3764872",
+                "acc_lowercase": "err3764872",
+                "mbases": 11919,
+                "mbytes": 5125
+            },
+            {
+                "acc": "SRR7340300",
+                "acc_lowercase": "srr7340300",
+                "mbases": 7764,
+                "mbytes": 3477
+            },
+            {
+                "acc": "SRR1950720",
+                "acc_lowercase": "srr1950720",
+                "mbases": 1936,
+                "mbytes": 1259
+            },
+            {
+                "acc": "SRR12802650",
+                "acc_lowercase": "srr12802650",
+                "mbases": 14515,
+                "mbytes": 4290
+            },
+            {
+                "acc": "ERR1398261",
+                "acc_lowercase": "err1398261",
+                "mbases": 5477,
+                "mbytes": 2570
+            },
+            {
+                "acc": "SRR13444059",
+                "acc_lowercase": "srr13444059",
+                "mbases": 14527,
+                "mbytes": 5254
+            },
+            {
+                "acc": "SRR6714118",
+                "acc_lowercase": "srr6714118",
+                "mbases": 3017,
+                "mbytes": 1550
+            },
+            {
+                "acc": "SRR10667379",
+                "acc_lowercase": "srr10667379",
+                "mbases": 182,
+                "mbytes": 76
+            },
+            {
+                "acc": "ERR5750808",
+                "acc_lowercase": "err5750808",
+                "mbases": 122,
+                "mbytes": 69
+            },
+            {
+                "acc": "SRR12053376",
+                "acc_lowercase": "srr12053376",
+                "mbases": 4729,
+                "mbytes": 2073
+            },
+            {
+                "acc": "SRR2938365",
+                "acc_lowercase": "srr2938365",
+                "mbases": 112,
+                "mbytes": 77
+            },
+            {
+                "acc": "DRR168290",
+                "acc_lowercase": "drr168290",
+                "mbases": 1757,
+                "mbytes": 635
+            },
+            {
+                "acc": "ERR5640779",
+                "acc_lowercase": "err5640779",
+                "mbases": 103,
+                "mbytes": 41
+            },
+            {
+                "acc": "SRR7769521",
+                "acc_lowercase": "srr7769521",
+                "mbases": 141,
+                "mbytes": 86
+            },
+            {
+                "acc": "ERR6175488",
+                "acc_lowercase": "err6175488",
+                "mbases": 12113,
+                "mbytes": 3731
+            },
+            {
+                "acc": "SRR11467479",
+                "acc_lowercase": "srr11467479",
+                "mbases": 12386,
+                "mbytes": 4251
+            },
+            {
+                "acc": "DRR092654",
+                "acc_lowercase": "drr092654",
+                "mbases": 841,
+                "mbytes": 424
+            },
+            {
+                "acc": "SRR10609761",
+                "acc_lowercase": "srr10609761",
+                "mbases": 130,
+                "mbytes": 53
+            },
+            {
+                "acc": "ERR4691843",
+                "acc_lowercase": "err4691843",
+                "mbases": 35225,
+                "mbytes": 21689
+            },
+            {
+                "acc": "ERR4982100",
+                "acc_lowercase": "err4982100",
+                "mbases": 13374,
+                "mbytes": 5417
+            },
+            {
+                "acc": "SRR5579979",
+                "acc_lowercase": "srr5579979",
+                "mbases": 5268,
+                "mbytes": 2436
+            },
+            {
+                "acc": "SRR5164204",
+                "acc_lowercase": "srr5164204",
+                "mbases": 1433,
+                "mbytes": 970
+            },
+            {
+                "acc": "SRR7688100",
+                "acc_lowercase": "srr7688100",
+                "mbases": 1054,
+                "mbytes": 485
+            },
+            {
+                "acc": "ERR2835360",
+                "acc_lowercase": "err2835360",
+                "mbases": 3753,
+                "mbytes": 1570
+            },
+            {
+                "acc": "ERR5845206",
+                "acc_lowercase": "err5845206",
+                "mbases": 6712,
+                "mbytes": 2060
+            },
+            {
+                "acc": "SRR14419020",
+                "acc_lowercase": "srr14419020",
+                "mbases": 6821,
+                "mbytes": 2447
+            },
+            {
+                "acc": "SRR10090753",
+                "acc_lowercase": "srr10090753",
+                "mbases": 1318,
+                "mbytes": 780
+            },
+            {
+                "acc": "SRR1577786",
+                "acc_lowercase": "srr1577786",
+                "mbases": 4983,
+                "mbytes": 3219
+            },
+            {
+                "acc": "SRR2246378",
+                "acc_lowercase": "srr2246378",
+                "mbases": 128,
+                "mbytes": 80
+            },
+            {
+                "acc": "ERR2641414",
+                "acc_lowercase": "err2641414",
+                "mbases": 4859,
+                "mbytes": 1858
+            },
+            {
+                "acc": "ERR1430505",
+                "acc_lowercase": "err1430505",
+                "mbases": 16385,
+                "mbytes": 6942
+            },
+            {
+                "acc": "SRR10360657",
+                "acc_lowercase": "srr10360657",
+                "mbases": 13042,
+                "mbytes": 5940
+            },
+            {
+                "acc": "SRR11412962",
+                "acc_lowercase": "srr11412962",
+                "mbases": 6796,
+                "mbytes": 2664
+            },
+            {
+                "acc": "SRR15404660",
+                "acc_lowercase": "srr15404660",
+                "mbases": 415,
+                "mbytes": 192
+            },
+            {
+                "acc": "ERR922722",
+                "acc_lowercase": "err922722",
+                "mbases": 1363,
+                "mbytes": 885
+            },
+            {
+                "acc": "DRR162443",
+                "acc_lowercase": "drr162443",
+                "mbases": 4433,
+                "mbytes": 2258
+            },
+            {
+                "acc": "ERR2641293",
+                "acc_lowercase": "err2641293",
+                "mbases": 1787,
+                "mbytes": 696
+            },
+            {
+                "acc": "ERR3440672",
+                "acc_lowercase": "err3440672",
+                "mbases": 1598,
+                "mbytes": 648
+            },
+            {
+                "acc": "SRR6256815",
+                "acc_lowercase": "srr6256815",
+                "mbases": 23472,
+                "mbytes": 9828
+            },
+            {
+                "acc": "ERR1914777",
+                "acc_lowercase": "err1914777",
+                "mbases": 547,
+                "mbytes": 203
+            },
+            {
+                "acc": "ERR2750774",
+                "acc_lowercase": "err2750774",
+                "mbases": 1615,
+                "mbytes": 694
+            },
+            {
+                "acc": "ERR436055",
+                "acc_lowercase": "err436055",
+                "mbases": 3998,
+                "mbytes": 1756
+            },
+            {
+                "acc": "SRR12772900",
+                "acc_lowercase": "srr12772900",
+                "mbases": 3759,
+                "mbytes": 1219
+            },
+            {
+                "acc": "SRR12170337",
+                "acc_lowercase": "srr12170337",
+                "mbases": 2024,
+                "mbytes": 1377
+            },
+            {
+                "acc": "ERR3405348",
+                "acc_lowercase": "err3405348",
+                "mbases": 1835,
+                "mbytes": 645
+            },
+            {
+                "acc": "SRR7756470",
+                "acc_lowercase": "srr7756470",
+                "mbases": 467,
+                "mbytes": 260
+            },
+            {
+                "acc": "SRR14511855",
+                "acc_lowercase": "srr14511855",
+                "mbases": 5878,
+                "mbytes": 1965
+            },
+            {
+                "acc": "SRR8427819",
+                "acc_lowercase": "srr8427819",
+                "mbases": 1136,
+                "mbytes": 737
+            },
+            {
+                "acc": "SRR2231775",
+                "acc_lowercase": "srr2231775",
+                "mbases": 613,
+                "mbytes": 391
+            },
+            {
+                "acc": "SRR11236229",
+                "acc_lowercase": "srr11236229",
+                "mbases": 11731,
+                "mbytes": 3555
+            },
+            {
+                "acc": "DRR083336",
+                "acc_lowercase": "drr083336",
+                "mbases": 1522,
+                "mbytes": 1044
+            },
+            {
+                "acc": "SRR2236791",
+                "acc_lowercase": "srr2236791",
+                "mbases": 137,
+                "mbytes": 86
+            },
+            {
+                "acc": "ERR3573432",
+                "acc_lowercase": "err3573432",
+                "mbases": 2432,
+                "mbytes": 1064
+            },
+            {
+                "acc": "SRR953900",
+                "acc_lowercase": "srr953900",
+                "mbases": 330,
+                "mbytes": 195
+            },
+            {
+                "acc": "SRR10692402",
+                "acc_lowercase": "srr10692402",
+                "mbases": 15177,
+                "mbytes": 5006
+            },
+            {
+                "acc": "SRR12122079",
+                "acc_lowercase": "srr12122079",
+                "mbases": 923,
+                "mbytes": 559
+            },
+            {
+                "acc": "SRR8399432",
+                "acc_lowercase": "srr8399432",
+                "mbases": 7858,
+                "mbytes": 3102
+            },
+            {
+                "acc": "SRR12635544",
+                "acc_lowercase": "srr12635544",
+                "mbases": 703,
+                "mbytes": 241
+            },
+            {
+                "acc": "SRR1490891",
+                "acc_lowercase": "srr1490891",
+                "mbases": 195,
+                "mbytes": 106
+            },
+            {
+                "acc": "SRR11412765",
+                "acc_lowercase": "srr11412765",
+                "mbases": 6602,
+                "mbytes": 2791
+            },
+            {
+                "acc": "SRR1491147",
+                "acc_lowercase": "srr1491147",
+                "mbases": 471,
+                "mbytes": 264
+            },
+            {
+                "acc": "SRR5665035",
+                "acc_lowercase": "srr5665035",
+                "mbases": 621,
+                "mbytes": 317
+            },
+            {
+                "acc": "SRR5949525",
+                "acc_lowercase": "srr5949525",
+                "mbases": 1203,
+                "mbytes": 475
+            },
+            {
+                "acc": "ERR3310241",
+                "acc_lowercase": "err3310241",
+                "mbases": 1441,
+                "mbytes": 917
+            },
+            {
+                "acc": "SRR6854574",
+                "acc_lowercase": "srr6854574",
+                "mbases": 11797,
+                "mbytes": 4620
+            },
+            {
+                "acc": "SRR2237466",
+                "acc_lowercase": "srr2237466",
+                "mbases": 648,
+                "mbytes": 412
+            },
+            {
+                "acc": "SRR10682421",
+                "acc_lowercase": "srr10682421",
+                "mbases": 7713,
+                "mbytes": 2822
+            },
+            {
+                "acc": "ERR3368624",
+                "acc_lowercase": "err3368624",
+                "mbases": 102,
+                "mbytes": 36
+            },
+            {
+                "acc": "SRR9037899",
+                "acc_lowercase": "srr9037899",
+                "mbases": 4211,
+                "mbytes": 1884
+            },
+            {
+                "acc": "SRR867167",
+                "acc_lowercase": "srr867167",
+                "mbases": 3770,
+                "mbytes": 2003
+            },
+            {
+                "acc": "SRR1462599",
+                "acc_lowercase": "srr1462599",
+                "mbases": 397,
+                "mbytes": 234
+            },
+            {
+                "acc": "ERR3173492",
+                "acc_lowercase": "err3173492",
+                "mbases": 19438,
+                "mbytes": 12797
+            },
+            {
+                "acc": "SRR3402058",
+                "acc_lowercase": "srr3402058",
+                "mbases": 4684,
+                "mbytes": 3097
+            },
+            {
+                "acc": "SRR7088796",
+                "acc_lowercase": "srr7088796",
+                "mbases": 15276,
+                "mbytes": 7178
+            },
+            {
+                "acc": "SRR9694919",
+                "acc_lowercase": "srr9694919",
+                "mbases": 14773,
+                "mbytes": 4667
+            },
+            {
+                "acc": "SRR7970064",
+                "acc_lowercase": "srr7970064",
+                "mbases": 12329,
+                "mbytes": 4734
+            },
+            {
+                "acc": "SRR8404222",
+                "acc_lowercase": "srr8404222",
+                "mbases": 1085,
+                "mbytes": 872
+            },
+            {
+                "acc": "ERR3573874",
+                "acc_lowercase": "err3573874",
+                "mbases": 2235,
+                "mbytes": 873
+            },
+            {
+                "acc": "SRR6897610",
+                "acc_lowercase": "srr6897610",
+                "mbases": 1182,
+                "mbytes": 665
+            },
+            {
+                "acc": "ERR1725992",
+                "acc_lowercase": "err1725992",
+                "mbases": 7628,
+                "mbytes": 3168
+            },
+            {
+                "acc": "ERR2017552",
+                "acc_lowercase": "err2017552",
+                "mbases": 5744,
+                "mbytes": 4285
+            },
+            {
+                "acc": "SRR8165586",
+                "acc_lowercase": "srr8165586",
+                "mbases": 1582,
+                "mbytes": 629
+            },
+            {
+                "acc": "ERR4163175",
+                "acc_lowercase": "err4163175",
+                "mbases": 2781,
+                "mbytes": 1206
+            },
+            {
+                "acc": "SRR13557312",
+                "acc_lowercase": "srr13557312",
+                "mbases": 4082,
+                "mbytes": 1198
+            },
+            {
+                "acc": "SRR8371964",
+                "acc_lowercase": "srr8371964",
+                "mbases": 1399,
+                "mbytes": 683
+            },
+            {
+                "acc": "SRR8543849",
+                "acc_lowercase": "srr8543849",
+                "mbases": 73856,
+                "mbytes": 21673
+            },
+            {
+                "acc": "ERR4032246",
+                "acc_lowercase": "err4032246",
+                "mbases": 287,
+                "mbytes": 116
+            },
+            {
+                "acc": "SRR14660892",
+                "acc_lowercase": "srr14660892",
+                "mbases": 12038,
+                "mbytes": 3712
+            },
+            {
+                "acc": "SRR10816040",
+                "acc_lowercase": "srr10816040",
+                "mbases": 13733,
+                "mbytes": 6865
+            },
+            {
+                "acc": "SRR5324625",
+                "acc_lowercase": "srr5324625",
+                "mbases": 123,
+                "mbytes": 69
+            },
+            {
+                "acc": "SRR8144398",
+                "acc_lowercase": "srr8144398",
+                "mbases": 8413,
+                "mbytes": 2989
+            },
+            {
+                "acc": "SRR13336883",
+                "acc_lowercase": "srr13336883",
+                "mbases": 11016,
+                "mbytes": 4276
+            },
+            {
+                "acc": "SRR2246384",
+                "acc_lowercase": "srr2246384",
+                "mbases": 679,
+                "mbytes": 438
+            },
+            {
+                "acc": "SRR4026208",
+                "acc_lowercase": "srr4026208",
+                "mbases": 11405,
+                "mbytes": 6392
+            },
+            {
+                "acc": "SRR9637831",
+                "acc_lowercase": "srr9637831",
+                "mbases": 5097,
+                "mbytes": 1718
+            },
+            {
+                "acc": "SRR11125961",
+                "acc_lowercase": "srr11125961",
+                "mbases": 736,
+                "mbytes": 242
+            },
+            {
+                "acc": "SRR8204563",
+                "acc_lowercase": "srr8204563",
+                "mbases": 5445,
+                "mbytes": 2379
+            },
+            {
+                "acc": "SRR8925783",
+                "acc_lowercase": "srr8925783",
+                "mbases": 23770,
+                "mbytes": 7865
+            },
+            {
+                "acc": "SRR11037877",
+                "acc_lowercase": "srr11037877",
+                "mbases": 104,
+                "mbytes": 59
+            },
+            {
+                "acc": "SRR12711058",
+                "acc_lowercase": "srr12711058",
+                "mbases": 8325,
+                "mbytes": 2751
+            },
+            {
+                "acc": "SRR10696829",
+                "acc_lowercase": "srr10696829",
+                "mbases": 11702,
+                "mbytes": 4880
+            },
+            {
+                "acc": "SRR2188773",
+                "acc_lowercase": "srr2188773",
+                "mbases": 639,
+                "mbytes": 421
+            },
+            {
+                "acc": "SRR13271640",
+                "acc_lowercase": "srr13271640",
+                "mbases": 3550,
+                "mbytes": 1226
+            },
+            {
+                "acc": "SRR11277097",
+                "acc_lowercase": "srr11277097",
+                "mbases": 1358,
+                "mbytes": 542
+            },
+            {
+                "acc": "SRR9677958",
+                "acc_lowercase": "srr9677958",
+                "mbases": 2204,
+                "mbytes": 1008
+            },
+            {
+                "acc": "ERR2824910",
+                "acc_lowercase": "err2824910",
+                "mbases": 4808,
+                "mbytes": 1768
+            },
+            {
+                "acc": "SRR16596687",
+                "acc_lowercase": "srr16596687",
+                "mbases": 24317,
+                "mbytes": 7190
+            },
+            {
+                "acc": "SRR9670541",
+                "acc_lowercase": "srr9670541",
+                "mbases": 1407,
+                "mbytes": 492
+            },
+            {
+                "acc": "ERR233239",
+                "acc_lowercase": "err233239",
+                "mbases": 1716,
+                "mbytes": 1264
+            },
+            {
+                "acc": "ERR719192",
+                "acc_lowercase": "err719192",
+                "mbases": 808,
+                "mbytes": 581
+            },
+            {
+                "acc": "ERR4032047",
+                "acc_lowercase": "err4032047",
+                "mbases": 319,
+                "mbytes": 125
+            },
+            {
+                "acc": "SRR12302410",
+                "acc_lowercase": "srr12302410",
+                "mbases": 4413,
+                "mbytes": 1821
+            },
+            {
+                "acc": "SRR3182143",
+                "acc_lowercase": "srr3182143",
+                "mbases": 931,
+                "mbytes": 599
+            },
+            {
+                "acc": "SRR13300735",
+                "acc_lowercase": "srr13300735",
+                "mbases": 4142,
+                "mbytes": 1573
+            },
+            {
+                "acc": "ERR3485549",
+                "acc_lowercase": "err3485549",
+                "mbases": 89997,
+                "mbytes": 49335
+            },
+            {
+                "acc": "SRR11194512",
+                "acc_lowercase": "srr11194512",
+                "mbases": 199,
+                "mbytes": 64
+            },
+            {
+                "acc": "SRR5104236",
+                "acc_lowercase": "srr5104236",
+                "mbases": 1765,
+                "mbytes": 851
+            },
+            {
+                "acc": "SRR3182035",
+                "acc_lowercase": "srr3182035",
+                "mbases": 1548,
+                "mbytes": 954
+            },
+            {
+                "acc": "SRR5324195",
+                "acc_lowercase": "srr5324195",
+                "mbases": 137,
+                "mbytes": 87
+            },
+            {
+                "acc": "ERR748224",
+                "acc_lowercase": "err748224",
+                "mbases": 1690,
+                "mbytes": 1191
+            },
+            {
+                "acc": "ERR1877724",
+                "acc_lowercase": "err1877724",
+                "mbases": 466,
+                "mbytes": 261
+            },
+            {
+                "acc": "SRR9092150",
+                "acc_lowercase": "srr9092150",
+                "mbases": 201,
+                "mbytes": 113
+            },
+            {
+                "acc": "SRR15343421",
+                "acc_lowercase": "srr15343421",
+                "mbases": 1728,
+                "mbytes": 686
+            },
+            {
+                "acc": "ERR2750566",
+                "acc_lowercase": "err2750566",
+                "mbases": 1129,
+                "mbytes": 471
+            },
+            {
+                "acc": "ERR7159564",
+                "acc_lowercase": "err7159564",
+                "mbases": 108,
+                "mbytes": 40
+            },
+            {
+                "acc": "ERR5519331",
+                "acc_lowercase": "err5519331",
+                "mbases": 2904,
+                "mbytes": 1109
+            },
+            {
+                "acc": "SRR16491052",
+                "acc_lowercase": "srr16491052",
+                "mbases": 4512,
+                "mbytes": 1382
+            },
+            {
+                "acc": "SRR14117150",
+                "acc_lowercase": "srr14117150",
+                "mbases": 9012,
+                "mbytes": 3058
+            },
+            {
+                "acc": "ERR978613",
+                "acc_lowercase": "err978613",
+                "mbases": 8302,
+                "mbytes": 5474
+            },
+            {
+                "acc": "ERR3593026",
+                "acc_lowercase": "err3593026",
+                "mbases": 2112,
+                "mbytes": 902
+            },
+            {
+                "acc": "SRR12270106",
+                "acc_lowercase": "srr12270106",
+                "mbases": 4644,
+                "mbytes": 1605
+            },
+            {
+                "acc": "ERR1662462",
+                "acc_lowercase": "err1662462",
+                "mbases": 184,
+                "mbytes": 108
+            },
+            {
+                "acc": "SRR2193899",
+                "acc_lowercase": "srr2193899",
+                "mbases": 617,
+                "mbytes": 397
+            },
+            {
+                "acc": "SRR13300689",
+                "acc_lowercase": "srr13300689",
+                "mbases": 2347,
+                "mbytes": 823
+            },
+            {
+                "acc": "SRR6235541",
+                "acc_lowercase": "srr6235541",
+                "mbases": 181,
+                "mbytes": 110
+            },
+            {
+                "acc": "ERR4078134",
+                "acc_lowercase": "err4078134",
+                "mbases": 2258,
+                "mbytes": 878
+            },
+            {
+                "acc": "SRR7533078",
+                "acc_lowercase": "srr7533078",
+                "mbases": 15866,
+                "mbytes": 10238
+            },
+            {
+                "acc": "SRR13573378",
+                "acc_lowercase": "srr13573378",
+                "mbases": 1786,
+                "mbytes": 666
+            },
+            {
+                "acc": "ERR6465902",
+                "acc_lowercase": "err6465902",
+                "mbases": 311,
+                "mbytes": 101
+            },
+            {
+                "acc": "SRR7365426",
+                "acc_lowercase": "srr7365426",
+                "mbases": 459,
+                "mbytes": 181
+            },
+            {
+                "acc": "SRR7408036",
+                "acc_lowercase": "srr7408036",
+                "mbases": 1914,
+                "mbytes": 1011
+            },
+            {
+                "acc": "SRR2199429",
+                "acc_lowercase": "srr2199429",
+                "mbases": 541,
+                "mbytes": 349
+            },
+            {
+                "acc": "SRR3498954",
+                "acc_lowercase": "srr3498954",
+                "mbases": 908,
+                "mbytes": 403
+            },
+            {
+                "acc": "SRR12056758",
+                "acc_lowercase": "srr12056758",
+                "mbases": 2114,
+                "mbytes": 1411
+            },
+            {
+                "acc": "SRR12814726",
+                "acc_lowercase": "srr12814726",
+                "mbases": 3609,
+                "mbytes": 1181
+            },
+            {
+                "acc": "SRR5165963",
+                "acc_lowercase": "srr5165963",
+                "mbases": 1052,
+                "mbytes": 706
+            },
+            {
+                "acc": "ERR6718281",
+                "acc_lowercase": "err6718281",
+                "mbases": 1699,
+                "mbytes": 587
+            },
+            {
+                "acc": "SRR1748642",
+                "acc_lowercase": "srr1748642",
+                "mbases": 647,
+                "mbytes": 230
+            },
+            {
+                "acc": "SRR3170962",
+                "acc_lowercase": "srr3170962",
+                "mbases": 1778,
+                "mbytes": 803
+            },
+            {
+                "acc": "SRR16491076",
+                "acc_lowercase": "srr16491076",
+                "mbases": 729,
+                "mbytes": 185
+            },
+            {
+                "acc": "ERR1302314",
+                "acc_lowercase": "err1302314",
+                "mbases": 675,
+                "mbytes": 358
+            },
+            {
+                "acc": "SRR4235035",
+                "acc_lowercase": "srr4235035",
+                "mbases": 1649,
+                "mbytes": 1039
+            },
+            {
+                "acc": "SRR3187200",
+                "acc_lowercase": "srr3187200",
+                "mbases": 1390,
+                "mbytes": 960
+            },
+            {
+                "acc": "SRR1173821",
+                "acc_lowercase": "srr1173821",
+                "mbases": 19996,
+                "mbytes": 12614
+            },
+            {
+                "acc": "SRR6854294",
+                "acc_lowercase": "srr6854294",
+                "mbases": 889,
+                "mbytes": 561
+            },
+            {
+                "acc": "ERR4139594",
+                "acc_lowercase": "err4139594",
+                "mbases": 2635,
+                "mbytes": 1196
+            },
+            {
+                "acc": "SRR14017546",
+                "acc_lowercase": "srr14017546",
+                "mbases": 6083,
+                "mbytes": 1872
+            },
+            {
+                "acc": "SRR6399653",
+                "acc_lowercase": "srr6399653",
+                "mbases": 13328,
+                "mbytes": 6531
+            },
+            {
+                "acc": "ERR3180378",
+                "acc_lowercase": "err3180378",
+                "mbases": 118,
+                "mbytes": 70
+            },
+            {
+                "acc": "ERR3180209",
+                "acc_lowercase": "err3180209",
+                "mbases": 177,
+                "mbytes": 99
+            },
+            {
+                "acc": "ERR2193559",
+                "acc_lowercase": "err2193559",
+                "mbases": 315,
+                "mbytes": 209
+            },
+            {
+                "acc": "SRR10616463",
+                "acc_lowercase": "srr10616463",
+                "mbases": 409,
+                "mbytes": 155
+            },
+            {
+                "acc": "ERR4502616",
+                "acc_lowercase": "err4502616",
+                "mbases": 147,
+                "mbytes": 718
+            },
+            {
+                "acc": "SRR797685",
+                "acc_lowercase": "srr797685",
+                "mbases": 8090,
+                "mbytes": 4771
+            },
+            {
+                "acc": "ERR2562197",
+                "acc_lowercase": "err2562197",
+                "mbases": 10477,
+                "mbytes": 4340
+            },
+            {
+                "acc": "ERR977416",
+                "acc_lowercase": "err977416",
+                "mbases": 3356,
+                "mbytes": 2100
+            },
+            {
+                "acc": "SRR3589016",
+                "acc_lowercase": "srr3589016",
+                "mbases": 5549,
+                "mbytes": 1848
+            },
+            {
+                "acc": "SRR6256348",
+                "acc_lowercase": "srr6256348",
+                "mbases": 22644,
+                "mbytes": 11705
+            },
+            {
+                "acc": "SRR8173978",
+                "acc_lowercase": "srr8173978",
+                "mbases": 8028,
+                "mbytes": 3055
+            },
+            {
+                "acc": "SRR9670930",
+                "acc_lowercase": "srr9670930",
+                "mbases": 2036,
+                "mbytes": 821
+            },
+            {
+                "acc": "ERR5243164",
+                "acc_lowercase": "err5243164",
+                "mbases": 3075,
+                "mbytes": 1225
+            },
+            {
+                "acc": "SRR1611985",
+                "acc_lowercase": "srr1611985",
+                "mbases": 1256,
+                "mbytes": 759
+            },
+            {
+                "acc": "ERR4369742",
+                "acc_lowercase": "err4369742",
+                "mbases": 4321,
+                "mbytes": 1879
+            },
+            {
+                "acc": "ERR5083896",
+                "acc_lowercase": "err5083896",
+                "mbases": 1762,
+                "mbytes": 506
+            },
+            {
+                "acc": "SRR8611927",
+                "acc_lowercase": "srr8611927",
+                "mbases": 9821,
+                "mbytes": 5713
+            },
+            {
+                "acc": "ERR2193589",
+                "acc_lowercase": "err2193589",
+                "mbases": 274,
+                "mbytes": 166
+            },
+            {
+                "acc": "SRR7244346",
+                "acc_lowercase": "srr7244346",
+                "mbases": 10748,
+                "mbytes": 4183
+            },
+            {
+                "acc": "SRR14578321",
+                "acc_lowercase": "srr14578321",
+                "mbases": 36016,
+                "mbytes": 11198
+            },
+            {
+                "acc": "SRR8509928",
+                "acc_lowercase": "srr8509928",
+                "mbases": 155,
+                "mbytes": 72
+            },
+            {
+                "acc": "SRR12711348",
+                "acc_lowercase": "srr12711348",
+                "mbases": 8884,
+                "mbytes": 2731
+            },
+            {
+                "acc": "SRR5164102",
+                "acc_lowercase": "srr5164102",
+                "mbases": 309,
+                "mbytes": 193
+            },
+            {
+                "acc": "SRR9224450",
+                "acc_lowercase": "srr9224450",
+                "mbases": 867,
+                "mbytes": 530
+            },
+            {
+                "acc": "SRR13554788",
+                "acc_lowercase": "srr13554788",
+                "mbases": 1488,
+                "mbytes": 748
+            },
+            {
+                "acc": "SRR13622646",
+                "acc_lowercase": "srr13622646",
+                "mbases": 5711,
+                "mbytes": 1666
+            },
+            {
+                "acc": "ERR260488",
+                "acc_lowercase": "err260488",
+                "mbases": 1024,
+                "mbytes": 590
+            },
+            {
+                "acc": "SRR14687626",
+                "acc_lowercase": "srr14687626",
+                "mbases": 404,
+                "mbytes": 168
+            },
+            {
+                "acc": "ERR2641323",
+                "acc_lowercase": "err2641323",
+                "mbases": 5276,
+                "mbytes": 1929
+            },
+            {
+                "acc": "ERR1914229",
+                "acc_lowercase": "err1914229",
+                "mbases": 1001,
+                "mbytes": 372
+            },
+            {
+                "acc": "SRR5405894",
+                "acc_lowercase": "srr5405894",
+                "mbases": 4809,
+                "mbytes": 3393
+            },
+            {
+                "acc": "SRR11562304",
+                "acc_lowercase": "srr11562304",
+                "mbases": 15824,
+                "mbytes": 6852
+            },
+            {
+                "acc": "SRR15115732",
+                "acc_lowercase": "srr15115732",
+                "mbases": 1340,
+                "mbytes": 420
+            },
+            {
+                "acc": "SRR6220835",
+                "acc_lowercase": "srr6220835",
+                "mbases": 2899,
+                "mbytes": 1150
+            },
+            {
+                "acc": "SRR7595314",
+                "acc_lowercase": "srr7595314",
+                "mbases": 18056,
+                "mbytes": 10212
+            },
+            {
+                "acc": "SRR11749289",
+                "acc_lowercase": "srr11749289",
+                "mbases": 5420,
+                "mbytes": 1992
+            },
+            {
+                "acc": "SRR9178174",
+                "acc_lowercase": "srr9178174",
+                "mbases": 3240,
+                "mbytes": 1396
+            },
+            {
+                "acc": "SRR5106471",
+                "acc_lowercase": "srr5106471",
+                "mbases": 5962,
+                "mbytes": 2443
+            },
+            {
+                "acc": "ERR2030036",
+                "acc_lowercase": "err2030036",
+                "mbases": 573,
+                "mbytes": 327
+            },
+            {
+                "acc": "SRR5032348",
+                "acc_lowercase": "srr5032348",
+                "mbases": 4080,
+                "mbytes": 2698
+            },
+            {
+                "acc": "SRR5240411",
+                "acc_lowercase": "srr5240411",
+                "mbases": 1691,
+                "mbytes": 688
+            },
+            {
+                "acc": "SRR6953648",
+                "acc_lowercase": "srr6953648",
+                "mbases": 1088,
+                "mbytes": 571
+            },
+            {
+                "acc": "SRR14879657",
+                "acc_lowercase": "srr14879657",
+                "mbases": 94797,
+                "mbytes": 40807
+            },
+            {
+                "acc": "SRR2145511",
+                "acc_lowercase": "srr2145511",
+                "mbases": 3000,
+                "mbytes": 1794
+            },
+            {
+                "acc": "SRR11183897",
+                "acc_lowercase": "srr11183897",
+                "mbases": 1692,
+                "mbytes": 510
+            },
+            {
+                "acc": "ERR6001949",
+                "acc_lowercase": "err6001949",
+                "mbases": 5903,
+                "mbytes": 3091
+            },
+            {
+                "acc": "SRR9684949",
+                "acc_lowercase": "srr9684949",
+                "mbases": 2637,
+                "mbytes": 1009
+            },
+            {
+                "acc": "SRR14560475",
+                "acc_lowercase": "srr14560475",
+                "mbases": 6397,
+                "mbytes": 2016
+            },
+            {
+                "acc": "SRR7687844",
+                "acc_lowercase": "srr7687844",
+                "mbases": 1001,
+                "mbytes": 459
+            },
+            {
+                "acc": "SRR12737812",
+                "acc_lowercase": "srr12737812",
+                "mbases": 5549,
+                "mbytes": 1664
+            },
+            {
+                "acc": "SRR6367596",
+                "acc_lowercase": "srr6367596",
+                "mbases": 7169,
+                "mbytes": 2695
+            },
+            {
+                "acc": "ERR3574883",
+                "acc_lowercase": "err3574883",
+                "mbases": 1608,
+                "mbytes": 629
+            },
+            {
+                "acc": "ERR2840926",
+                "acc_lowercase": "err2840926",
+                "mbases": 5001,
+                "mbytes": 2428
+            },
+            {
+                "acc": "SRR10393270",
+                "acc_lowercase": "srr10393270",
+                "mbases": 3665,
+                "mbytes": 1048
+            },
+            {
+                "acc": "SRR11700431",
+                "acc_lowercase": "srr11700431",
+                "mbases": 11861,
+                "mbytes": 4933
+            },
+            {
+                "acc": "SRR5260501",
+                "acc_lowercase": "srr5260501",
+                "mbases": 3631,
+                "mbytes": 1594
+            },
+            {
+                "acc": "SRR1491153",
+                "acc_lowercase": "srr1491153",
+                "mbases": 407,
+                "mbytes": 228
+            },
+            {
+                "acc": "SRR13336321",
+                "acc_lowercase": "srr13336321",
+                "mbases": 16457,
+                "mbytes": 5507
+            },
+            {
+                "acc": "SRR7979675",
+                "acc_lowercase": "srr7979675",
+                "mbases": 7185,
+                "mbytes": 3016
+            },
+            {
+                "acc": "DRR198884",
+                "acc_lowercase": "drr198884",
+                "mbases": 21350,
+                "mbytes": 9017
+            },
+            {
+                "acc": "SRR7685265",
+                "acc_lowercase": "srr7685265",
+                "mbases": 15456,
+                "mbytes": 6181
+            },
+            {
+                "acc": "ERR598968",
+                "acc_lowercase": "err598968",
+                "mbases": 33618,
+                "mbytes": 21390
+            },
+            {
+                "acc": "SRR6201610",
+                "acc_lowercase": "srr6201610",
+                "mbases": 2955,
+                "mbytes": 1804
+            },
+            {
+                "acc": "SRR13775304",
+                "acc_lowercase": "srr13775304",
+                "mbases": 14246,
+                "mbytes": 6711
+            },
+            {
+                "acc": "SRR1491224",
+                "acc_lowercase": "srr1491224",
+                "mbases": 424,
+                "mbytes": 255
+            },
+            {
+                "acc": "ERR2587064",
+                "acc_lowercase": "err2587064",
+                "mbases": 1388,
+                "mbytes": 592
+            },
+            {
+                "acc": "SRR5321675",
+                "acc_lowercase": "srr5321675",
+                "mbases": 573,
+                "mbytes": 315
+            },
+            {
+                "acc": "ERR480560",
+                "acc_lowercase": "err480560",
+                "mbases": 362,
+                "mbytes": 330
+            },
+            {
+                "acc": "ERR3593827",
+                "acc_lowercase": "err3593827",
+                "mbases": 1857,
+                "mbytes": 774
+            },
+            {
+                "acc": "ERR1726924",
+                "acc_lowercase": "err1726924",
+                "mbases": 26245,
+                "mbytes": 15528
+            },
+            {
+                "acc": "SRR8797863",
+                "acc_lowercase": "srr8797863",
+                "mbases": 322,
+                "mbytes": 132
+            },
+            {
+                "acc": "SRR13502484",
+                "acc_lowercase": "srr13502484",
+                "mbases": 5525,
+                "mbytes": 1678
+            },
+            {
+                "acc": "SRR16054176",
+                "acc_lowercase": "srr16054176",
+                "mbases": 154,
+                "mbytes": 69
+            },
+            {
+                "acc": "SRR1748717",
+                "acc_lowercase": "srr1748717",
+                "mbases": 421,
+                "mbytes": 155
+            },
+            {
+                "acc": "SRR3643869",
+                "acc_lowercase": "srr3643869",
+                "mbases": 482,
+                "mbytes": 207
+            },
+            {
+                "acc": "SRR12114518",
+                "acc_lowercase": "srr12114518",
+                "mbases": 548,
+                "mbytes": 348
+            },
+            {
+                "acc": "ERR5917284",
+                "acc_lowercase": "err5917284",
+                "mbases": 2993,
+                "mbytes": 986
+            },
+            {
+                "acc": "SRR14687406",
+                "acc_lowercase": "srr14687406",
+                "mbases": 189,
+                "mbytes": 75
+            },
+            {
+                "acc": "ERR3574440",
+                "acc_lowercase": "err3574440",
+                "mbases": 1744,
+                "mbytes": 679
+            },
+            {
+                "acc": "SRR12614989",
+                "acc_lowercase": "srr12614989",
+                "mbases": 1252,
+                "mbytes": 684
+            },
+            {
+                "acc": "ERR2789313",
+                "acc_lowercase": "err2789313",
+                "mbases": 3972,
+                "mbytes": 1445
+            },
+            {
+                "acc": "SRR9040474",
+                "acc_lowercase": "srr9040474",
+                "mbases": 1773,
+                "mbytes": 821
+            },
+            {
+                "acc": "SRR1909385",
+                "acc_lowercase": "srr1909385",
+                "mbases": 420,
+                "mbytes": 261
+            },
+            {
+                "acc": "SRR5805523",
+                "acc_lowercase": "srr5805523",
+                "mbases": 15883,
+                "mbytes": 5458
+            },
+            {
+                "acc": "ERR2641243",
+                "acc_lowercase": "err2641243",
+                "mbases": 3301,
+                "mbytes": 1244
+            },
+            {
+                "acc": "SRR5329828",
+                "acc_lowercase": "srr5329828",
+                "mbases": 124,
+                "mbytes": 53
+            },
+            {
+                "acc": "ERR3593442",
+                "acc_lowercase": "err3593442",
+                "mbases": 1473,
+                "mbytes": 604
+            },
+            {
+                "acc": "ERR5003403",
+                "acc_lowercase": "err5003403",
+                "mbases": 4111,
+                "mbytes": 1374
+            },
+            {
+                "acc": "SRR6504905",
+                "acc_lowercase": "srr6504905",
+                "mbases": 13005,
+                "mbytes": 5387
+            },
+            {
+                "acc": "ERR5639079",
+                "acc_lowercase": "err5639079",
+                "mbases": 12539,
+                "mbytes": 3977
+            },
+            {
+                "acc": "ERR479505",
+                "acc_lowercase": "err479505",
+                "mbases": 1445,
+                "mbytes": 933
+            },
+            {
+                "acc": "SRR14572521",
+                "acc_lowercase": "srr14572521",
+                "mbases": 895,
+                "mbytes": 425
+            },
+            {
+                "acc": "SRR15442456",
+                "acc_lowercase": "srr15442456",
+                "mbases": 5486,
+                "mbytes": 2180
+            },
+            {
+                "acc": "SRR7689133",
+                "acc_lowercase": "srr7689133",
+                "mbases": 538,
+                "mbytes": 204
+            },
+            {
+                "acc": "SRR6311223",
+                "acc_lowercase": "srr6311223",
+                "mbases": 2822,
+                "mbytes": 1617
+            },
+            {
+                "acc": "SRR9850906",
+                "acc_lowercase": "srr9850906",
+                "mbases": 7994,
+                "mbytes": 3157
+            },
+            {
+                "acc": "SRR1980309",
+                "acc_lowercase": "srr1980309",
+                "mbases": 364,
+                "mbytes": 219
+            },
+            {
+                "acc": "SRR1491590",
+                "acc_lowercase": "srr1491590",
+                "mbases": 357,
+                "mbytes": 201
+            },
+            {
+                "acc": "SRR12917028",
+                "acc_lowercase": "srr12917028",
+                "mbases": 10000,
+                "mbytes": 5342
+            },
+            {
+                "acc": "SRR13774451",
+                "acc_lowercase": "srr13774451",
+                "mbases": 11283,
+                "mbytes": 3278
+            },
+            {
+                "acc": "ERR562372",
+                "acc_lowercase": "err562372",
+                "mbases": 222,
+                "mbytes": 163
+            },
+            {
+                "acc": "SRR11125863",
+                "acc_lowercase": "srr11125863",
+                "mbases": 2788,
+                "mbytes": 824
+            },
+            {
+                "acc": "ERR2739389",
+                "acc_lowercase": "err2739389",
+                "mbases": 808,
+                "mbytes": 477
+            },
+            {
+                "acc": "SRR8929683",
+                "acc_lowercase": "srr8929683",
+                "mbases": 6524,
+                "mbytes": 2570
+            },
+            {
+                "acc": "SRR10682275",
+                "acc_lowercase": "srr10682275",
+                "mbases": 7863,
+                "mbytes": 2589
+            },
+            {
+                "acc": "SRR12114287",
+                "acc_lowercase": "srr12114287",
+                "mbases": 914,
+                "mbytes": 542
+            },
+            {
+                "acc": "ERR4223626",
+                "acc_lowercase": "err4223626",
+                "mbases": 239,
+                "mbytes": 149
+            },
+            {
+                "acc": "SRR12529048",
+                "acc_lowercase": "srr12529048",
+                "mbases": 23857,
+                "mbytes": 7673
+            },
+            {
+                "acc": "SRR9178269",
+                "acc_lowercase": "srr9178269",
+                "mbases": 3893,
+                "mbytes": 1673
+            },
+            {
+                "acc": "SRR6048558",
+                "acc_lowercase": "srr6048558",
+                "mbases": 7583,
+                "mbytes": 3133
+            },
+            {
+                "acc": "ERR4065488",
+                "acc_lowercase": "err4065488",
+                "mbases": 1061,
+                "mbytes": 397
+            },
+            {
+                "acc": "ERR233236",
+                "acc_lowercase": "err233236",
+                "mbases": 1358,
+                "mbytes": 1001
+            },
+            {
+                "acc": "SRR12205367",
+                "acc_lowercase": "srr12205367",
+                "mbases": 893,
+                "mbytes": 419
+            },
+            {
+                "acc": "ERR3450678",
+                "acc_lowercase": "err3450678",
+                "mbases": 5709,
+                "mbytes": 2019
+            },
+            {
+                "acc": "ERR3574559",
+                "acc_lowercase": "err3574559",
+                "mbases": 2301,
+                "mbytes": 897
+            },
+            {
+                "acc": "SRR13122812",
+                "acc_lowercase": "srr13122812",
+                "mbases": 12816,
+                "mbytes": 4007
+            },
+            {
+                "acc": "ERR6618651",
+                "acc_lowercase": "err6618651",
+                "mbases": 4016,
+                "mbytes": 1805
+            },
+            {
+                "acc": "SRR13378597",
+                "acc_lowercase": "srr13378597",
+                "mbases": 7919,
+                "mbytes": 2570
+            },
+            {
+                "acc": "ERR1293628",
+                "acc_lowercase": "err1293628",
+                "mbases": 1367,
+                "mbytes": 837
+            },
+            {
+                "acc": "ERR2001167",
+                "acc_lowercase": "err2001167",
+                "mbases": 593,
+                "mbytes": 343
+            },
+            {
+                "acc": "SRR15436235",
+                "acc_lowercase": "srr15436235",
+                "mbases": 63013,
+                "mbytes": 20322
+            },
+            {
+                "acc": "SRR8381856",
+                "acc_lowercase": "srr8381856",
+                "mbases": 2200,
+                "mbytes": 847
+            },
+            {
+                "acc": "SRR15051376",
+                "acc_lowercase": "srr15051376",
+                "mbases": 1273,
+                "mbytes": 395
+            },
+            {
+                "acc": "SRR2240293",
+                "acc_lowercase": "srr2240293",
+                "mbases": 3502,
+                "mbytes": 1564
+            },
+            {
+                "acc": "SRR1750037",
+                "acc_lowercase": "srr1750037",
+                "mbases": 1824,
+                "mbytes": 1032
+            },
+            {
+                "acc": "SRR14148842",
+                "acc_lowercase": "srr14148842",
+                "mbases": 5700,
+                "mbytes": 2984
+            },
+            {
+                "acc": "ERR414377",
+                "acc_lowercase": "err414377",
+                "mbases": 5999,
+                "mbytes": 4047
+            },
+            {
+                "acc": "SRR16156421",
+                "acc_lowercase": "srr16156421",
+                "mbases": 13923,
+                "mbytes": 5484
+            },
+            {
+                "acc": "SRR7986793",
+                "acc_lowercase": "srr7986793",
+                "mbases": 2831,
+                "mbytes": 1458
+            },
+            {
+                "acc": "SRR11124890",
+                "acc_lowercase": "srr11124890",
+                "mbases": 610,
+                "mbytes": 192
+            },
+            {
+                "acc": "ERR4674114",
+                "acc_lowercase": "err4674114",
+                "mbases": 26789,
+                "mbytes": 8019
+            },
+            {
+                "acc": "SRR10744101",
+                "acc_lowercase": "srr10744101",
+                "mbases": 3585,
+                "mbytes": 1373
+            },
+            {
+                "acc": "SRR12114038",
+                "acc_lowercase": "srr12114038",
+                "mbases": 1060,
+                "mbytes": 624
+            },
+            {
+                "acc": "ERR2750559",
+                "acc_lowercase": "err2750559",
+                "mbases": 3627,
+                "mbytes": 1554
+            },
+            {
+                "acc": "SRR8144382",
+                "acc_lowercase": "srr8144382",
+                "mbases": 1928,
+                "mbytes": 708
+            },
+            {
+                "acc": "ERR1297797",
+                "acc_lowercase": "err1297797",
+                "mbases": 1426,
+                "mbytes": 1047
+            },
+            {
+                "acc": "ERR479584",
+                "acc_lowercase": "err479584",
+                "mbases": 1722,
+                "mbytes": 1232
+            },
+            {
+                "acc": "ERR1523888",
+                "acc_lowercase": "err1523888",
+                "mbases": 377,
+                "mbytes": 234
+            },
+            {
+                "acc": "SRR15377958",
+                "acc_lowercase": "srr15377958",
+                "mbases": 56903,
+                "mbytes": 16400
+            },
+            {
+                "acc": "SRR11126253",
+                "acc_lowercase": "srr11126253",
+                "mbases": 1678,
+                "mbytes": 491
+            },
+            {
+                "acc": "ERR1137113",
+                "acc_lowercase": "err1137113",
+                "mbases": 1610,
+                "mbytes": 910
+            },
+            {
+                "acc": "ERR2108704",
+                "acc_lowercase": "err2108704",
+                "mbases": 2453,
+                "mbytes": 1311
+            },
+            {
+                "acc": "SRR1779143",
+                "acc_lowercase": "srr1779143",
+                "mbases": 3022,
+                "mbytes": 1951
+            },
+            {
+                "acc": "SRR14784221",
+                "acc_lowercase": "srr14784221",
+                "mbases": 7256,
+                "mbytes": 2191
+            },
+            {
+                "acc": "SRR14121942",
+                "acc_lowercase": "srr14121942",
+                "mbases": 3191,
+                "mbytes": 1248
+            },
+            {
+                "acc": "ERR3180463",
+                "acc_lowercase": "err3180463",
+                "mbases": 151,
+                "mbytes": 89
+            },
+            {
+                "acc": "SRR10277323",
+                "acc_lowercase": "srr10277323",
+                "mbases": 1134,
+                "mbytes": 720
+            },
+            {
+                "acc": "SRR8074553",
+                "acc_lowercase": "srr8074553",
+                "mbases": 115,
+                "mbytes": 70
+            },
+            {
+                "acc": "ERR3180404",
+                "acc_lowercase": "err3180404",
+                "mbases": 413,
+                "mbytes": 238
+            },
+            {
+                "acc": "ERR599272",
+                "acc_lowercase": "err599272",
+                "mbases": 34057,
+                "mbytes": 23364
+            },
+            {
+                "acc": "SRR13791844",
+                "acc_lowercase": "srr13791844",
+                "mbases": 1292,
+                "mbytes": 805
+            },
+            {
+                "acc": "SRR6216802",
+                "acc_lowercase": "srr6216802",
+                "mbases": 1119,
+                "mbytes": 531
+            },
+            {
+                "acc": "ERR2194097",
+                "acc_lowercase": "err2194097",
+                "mbases": 408,
+                "mbytes": 248
+            },
+            {
+                "acc": "ERR5947824",
+                "acc_lowercase": "err5947824",
+                "mbases": 2990,
+                "mbytes": 934
+            },
+            {
+                "acc": "SRR16916503",
+                "acc_lowercase": "srr16916503",
+                "mbases": 29980,
+                "mbytes": 13347
+            },
+            {
+                "acc": "SRR10276591",
+                "acc_lowercase": "srr10276591",
+                "mbases": 816,
+                "mbytes": 560
+            },
+            {
+                "acc": "SRR17030714",
+                "acc_lowercase": "srr17030714",
+                "mbases": 1404,
+                "mbytes": 979
+            },
+            {
+                "acc": "ERR4328438",
+                "acc_lowercase": "err4328438",
+                "mbases": 791,
+                "mbytes": 247
+            },
+            {
+                "acc": "SRR9850912",
+                "acc_lowercase": "srr9850912",
+                "mbases": 8266,
+                "mbytes": 2903
+            },
+            {
+                "acc": "ERR2001147",
+                "acc_lowercase": "err2001147",
+                "mbases": 872,
+                "mbytes": 467
+            },
+            {
+                "acc": "SRR5947816",
+                "acc_lowercase": "srr5947816",
+                "mbases": 2528,
+                "mbytes": 1793
+            },
+            {
+                "acc": "SRR3208456",
+                "acc_lowercase": "srr3208456",
+                "mbases": 1549,
+                "mbytes": 1041
+            },
+            {
+                "acc": "ERR4371255",
+                "acc_lowercase": "err4371255",
+                "mbases": 3953,
+                "mbytes": 1603
+            },
+            {
+                "acc": "ERR2094174",
+                "acc_lowercase": "err2094174",
+                "mbases": 11114,
+                "mbytes": 4266
+            },
+            {
+                "acc": "SRR6399976",
+                "acc_lowercase": "srr6399976",
+                "mbases": 10165,
+                "mbytes": 5168
+            },
+            {
+                "acc": "SRR10874850",
+                "acc_lowercase": "srr10874850",
+                "mbases": 235,
+                "mbytes": 77
+            },
+            {
+                "acc": "SRR12325655",
+                "acc_lowercase": "srr12325655",
+                "mbases": 8892,
+                "mbytes": 3495
+            },
+            {
+                "acc": "SRR6426866",
+                "acc_lowercase": "srr6426866",
+                "mbases": 1574,
+                "mbytes": 690
+            },
+            {
+                "acc": "SRR12144678",
+                "acc_lowercase": "srr12144678",
+                "mbases": 8196,
+                "mbytes": 2740
+            },
+            {
+                "acc": "SRR12581884",
+                "acc_lowercase": "srr12581884",
+                "mbases": 8273,
+                "mbytes": 2500
+            },
+            {
+                "acc": "SRR11183853",
+                "acc_lowercase": "srr11183853",
+                "mbases": 680,
+                "mbytes": 204
+            },
+            {
+                "acc": "ERR3406046",
+                "acc_lowercase": "err3406046",
+                "mbases": 1843,
+                "mbytes": 643
+            },
+            {
+                "acc": "SRR8062348",
+                "acc_lowercase": "srr8062348",
+                "mbases": 15704,
+                "mbytes": 6526
+            },
+            {
+                "acc": "ERR3573118",
+                "acc_lowercase": "err3573118",
+                "mbases": 1364,
+                "mbytes": 529
+            },
+            {
+                "acc": "SRR5056894",
+                "acc_lowercase": "srr5056894",
+                "mbases": 7454,
+                "mbytes": 2331
+            },
+            {
+                "acc": "SRR12131175",
+                "acc_lowercase": "srr12131175",
+                "mbases": 26590,
+                "mbytes": 8037
+            },
+            {
+                "acc": "SRR2194133",
+                "acc_lowercase": "srr2194133",
+                "mbases": 563,
+                "mbytes": 364
+            },
+            {
+                "acc": "ERR2752143",
+                "acc_lowercase": "err2752143",
+                "mbases": 38261,
+                "mbytes": 25713
+            },
+            {
+                "acc": "SRR12735970",
+                "acc_lowercase": "srr12735970",
+                "mbases": 170,
+                "mbytes": 116
+            },
+            {
+                "acc": "SRR14555699",
+                "acc_lowercase": "srr14555699",
+                "mbases": 11162,
+                "mbytes": 3109
+            },
+            {
+                "acc": "ERR4495044",
+                "acc_lowercase": "err4495044",
+                "mbases": 248,
+                "mbytes": 91
+            },
+            {
+                "acc": "SRR7723061",
+                "acc_lowercase": "srr7723061",
+                "mbases": 8657,
+                "mbytes": 3317
+            },
+            {
+                "acc": "SRR10320878",
+                "acc_lowercase": "srr10320878",
+                "mbases": 825,
+                "mbytes": 349
+            },
+            {
+                "acc": "SRR3399055",
+                "acc_lowercase": "srr3399055",
+                "mbases": 36258,
+                "mbytes": 16040
+            },
+            {
+                "acc": "SRR14418888",
+                "acc_lowercase": "srr14418888",
+                "mbases": 22024,
+                "mbytes": 6875
+            },
+            {
+                "acc": "ERR4031825",
+                "acc_lowercase": "err4031825",
+                "mbases": 316,
+                "mbytes": 125
+            },
+            {
+                "acc": "ERR3574593",
+                "acc_lowercase": "err3574593",
+                "mbases": 2131,
+                "mbytes": 845
+            },
+            {
+                "acc": "ERR4406831",
+                "acc_lowercase": "err4406831",
+                "mbases": 2831,
+                "mbytes": 1316
+            }
+        ]
+    }
+}
