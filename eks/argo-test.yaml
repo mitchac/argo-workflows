@@ -7,10 +7,6 @@ metadata:
   version: "1.21"
 
 managedNodeGroups:
-- name: primary
-  desiredCapacity: 2
-  instanceType: t3.small
-  volumeSize: 100
 - name: workflow-jobs
   minSize: 0
   maxSize: 2
@@ -33,6 +29,15 @@ managedNodeGroups:
   maxSize: 3
   instanceType: t3.medium
   volumeSize: 150
+  tags:
+      k8s.io/cluster-autoscaler/enabled: "true"
+      k8s.io/cluster-autoscaler/argo-test: "true"
+- name: primary-large
+  desiredCapacity: 2
+  minSize: 2
+  maxSize: 4
+  instanceType: t3.large
+  volumeSize: 300
   tags:
       k8s.io/cluster-autoscaler/enabled: "true"
       k8s.io/cluster-autoscaler/argo-test: "true"
