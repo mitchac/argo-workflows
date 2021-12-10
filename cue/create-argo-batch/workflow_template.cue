@@ -101,27 +101,30 @@ merged_templates: [ for acc in _data.sra_accessions {
 						name:      "workdir"
 						mountPath: "/mnt/vol"
 					}]
-					resources: requests: {
-						// convert mbases to gbases
-						_gbases: div(acc["mbases"], 1000)
-						// the fixed amount of ram
-						_ram_buffer: 512
-						// the additional mb of ram we'll add per gbase in the sample
-						_ram_mult: 60
-						// calculate variable amount of ram
-						_ram_variable: _ram_mult * _gbases
-						// cap variable ram at 3000mb
-						_ram_variable_capped: list.Sort([3000, _ram_variable], list.Ascending)[0]
-						// calculate total ram required
-						_ram_reqd: _ram_buffer + _ram_variable_capped
-						// convert this value to the nearest multiple of 256mb
-						// this is a k8s requirement
-						_ram_nearest_256_Mi: (div(_ram_reqd, 256) * 256)
-						// add "Mi" and convert to string to 
-						_ram_nearest_256_Mi_units: "\(_ram_nearest_256_Mi)Mi"
-						memory:                    _ram_nearest_256_Mi_units
-						cpu:                       "750m"
-					}
+					resources: {
+						limits: cpu: "1000m"
+						requests: {
+							// convert mbases to gbases
+							_gbases: div(acc["mbases"], 1000)
+							// the fixed amount of ram
+							_ram_buffer: 512
+							// the additional mb of ram we'll add per gbase in the sample
+							_ram_mult: 60
+							// calculate variable amount of ram
+							_ram_variable: _ram_mult * _gbases
+							// cap variable ram at 3000mb
+							_ram_variable_capped: list.Sort([3000, _ram_variable], list.Ascending)[0]
+							// calculate total ram required
+							_ram_reqd: _ram_buffer + _ram_variable_capped
+							// convert this value to the nearest multiple of 256mb
+							// this is a k8s requirement
+							_ram_nearest_256_Mi: (div(_ram_reqd, 256) * 256)
+							// add "Mi" and convert to string to 
+							_ram_nearest_256_Mi_units: "\(_ram_nearest_256_Mi)Mi"
+							//memory:                    _ram_nearest_256_Mi_units
+							memory:                    "1792Mi" 
+							cpu:                       "750m"
+						}}
 
 				}
 				if _node_restrictions == "yes" {
