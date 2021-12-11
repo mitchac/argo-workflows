@@ -10,7 +10,7 @@ managedNodeGroups:
 - name: workflow-jobs
   minSize: 0
   maxSize: 2
-  instanceType: t3.large
+  instanceType: c5.4xlarge
   volumeSize: 100
   labels:
     purpose: workflow-jobs
@@ -23,20 +23,20 @@ managedNodeGroups:
       k8s.io/cluster-autoscaler/argo-test: "true"
       k8s.io/cluster-autoscaler/node-template/label/purpose: workflow-jobs
       k8s.io/cluster-autoscaler/node-template/taint/reserved-pool: "true:NoSchedule"
-- name: primary-medium
-  desiredCapacity: 1
-  minSize: 0
-  maxSize: 3
-  instanceType: t3.medium
-  volumeSize: 150
-  tags:
-      k8s.io/cluster-autoscaler/enabled: "true"
-      k8s.io/cluster-autoscaler/argo-test: "true"
 - name: primary-large
   desiredCapacity: 2
   minSize: 2
   maxSize: 4
   instanceType: t3.large
+  volumeSize: 300
+  tags:
+      k8s.io/cluster-autoscaler/enabled: "true"
+      k8s.io/cluster-autoscaler/argo-test: "true"
+- name: primary-xlarge
+  desiredCapacity: 1
+  minSize: 1
+  maxSize: 2
+  instanceType: t3.xlarge
   volumeSize: 300
   tags:
       k8s.io/cluster-autoscaler/enabled: "true"

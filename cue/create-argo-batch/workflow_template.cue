@@ -27,9 +27,9 @@ merged_templates: [ for acc in _data.sra_accessions {
 			}]
 			entrypoint: "singlem-task"
 			ttlStrategy: {
-				secondsAfterCompletion: 3600  // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
-				secondsAfterSuccess:    7200  // Time to live after workflow is successful
-				secondsAfterFailure:    10800 // 3 hours
+				secondsAfterCompletion: 300  // Time to live after workflow is completed, replaces ttlSecondsAfterFinished
+				secondsAfterSuccess:    300  // Time to live after workflow is successful
+				secondsAfterFailure:    3600 // 3 hours
 			} // Time to live after workflow fails
 			arguments: {
 				parameters: [{
@@ -103,7 +103,8 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}]
 					resources: {
 						limits: {
-							cpu: "1000m"
+							// lowered to 900m bc still getting node shutdowns at 935m
+							cpu: "900m"
 							memory: "3584Mi"
 						}
 						requests: {
