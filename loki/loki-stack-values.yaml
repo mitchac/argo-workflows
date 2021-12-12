@@ -12,8 +12,8 @@ promtail:
       operator: Equal
       value: "true"
       effect: NoSchedule
-  nodeSelector:
-    purpose: workflow-jobs
+      #  nodeSelector:
+      #      purpose: workflow-jobs
 
 grafana:
   enabled: true
