@@ -156,7 +156,7 @@ if __name__ == '__main__':
             # Keep trying submission, in case of head node failure.
             while True:
                 try:
-                    extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%k%M`.argo_submission.json")
+                    extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
                 except extern.ExternCalledProcessError as e:
                     logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
                     time.sleep(args.sleep_interval)
