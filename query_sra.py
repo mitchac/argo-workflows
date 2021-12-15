@@ -131,8 +131,12 @@ WHERE
       OR (libraryselection = 'RANDOM'
         AND mbases > 100))
     AND mbases <= 200000)
+    AND librarysource != 'VIRAL RNA' and librarysource != 'METATRANSCRIPTOMIC' and librarysource != 'TRANSCRIPTOMIC'
 ;
 """
+
+    # https://www.ncbi.nlm.nih.gov/sra/?term=SRR12280810 - covid, source VIRAL RNA - want to exclude
+    # https://www.ncbi.nlm.nih.gov/sra?term=srr7694367 covid, source VIRAL RNA - want to exclude
 
     destination_path = 'gs://bowerbird-bigquery-testing/sra_{}/*'.format(args.date)
     logging.info("Querying and writing results to {} ..".format(destination_path))
