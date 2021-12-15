@@ -50,6 +50,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--batch-size-file', help='read from a file which is just a number - submit this many each time')
     parent_parser.add_argument('--blacklist', help='Ignore accessions that are in this file')
     parent_parser.add_argument('--whitelist', help='Only submit accessions that are in this file')
+    parent_parser.add_argument('--context', help='argo submit to this context [default: Do not specify]')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -156,7 +157,10 @@ if __name__ == '__main__':
             # Keep trying submission, in case of head node failure.
             while True:
                 try:
-                    extern.run("argo submit -n argo -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
+                    context_arg = ""
+                    if args.context:
+                        context_arg = f"--context {args.context}"
+                    extern.run(f"argo submit -n argo {context_arg} -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
                 except extern.ExternCalledProcessError as e:
                     logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
                     time.sleep(args.sleep_interval)
