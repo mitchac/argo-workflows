@@ -78,7 +78,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 				}
 				container: {
 					name:  "singlem"
-					image: "public.ecr.aws/m5a0r7u5/singlem-wdl:0.13.2-dev36.e97d171"
+					image: "public.ecr.aws/m5a0r7u5/singlem-wdl:0.13.2-dev37.e97d171"
 					env: [{
 						name:  "TMPDIR"
 						value: "/mnt/vol"
@@ -90,7 +90,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 							echo Processing {{workflow.name}} {{inputs.parameters.SRA_accession_num}};
 							cd /mnt/vol;
 							rm -fv {{inputs.parameters.SRA_accession_num}}.sra;
-							kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m aws-cp &&
+							kingfisher get -r {{inputs.parameters.SRA_accession_num}} --output-format-possibilities sra --guess-aws-location --hide-download-progress -m aws-cp aws-http &&
 							ls -l && 
 							pidstat -r 5 -e bash -c '/tmp/singlem/bin/singlem pipe --sra-files {{inputs.parameters.SRA_accession_num}}.sra --archive_otu_table >(gzip >{{inputs.parameters.SRA_accession_num}}.annotated.singlem.json.gz) --threads 1 --singlem-metapackage /mpkg' |awk '{print $7}' |sort -rn |head -1 >max_rss
 							export PIPELINE_EXITSTATUS=$?;
