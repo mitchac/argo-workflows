@@ -105,8 +105,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 					}]
 					resources: {
 						limits: {
-							// lowered to 900m bc still getting node shutdowns at 935m
-							cpu: "900m"
+							cpu: "950m"
 							memory: "3584Mi"
 						}
 						requests: {
@@ -129,7 +128,7 @@ merged_templates: [ for acc in _data.sra_accessions {
 							_ram_nearest_256_Mi_units: "\(_ram_nearest_256_Mi)Mi"
 							//memory:                    _ram_nearest_256_Mi_units
 							memory:                    "1792Mi" 
-							cpu:                       "750m"
+							cpu:                       "950m"
 						}}
 
 				}
