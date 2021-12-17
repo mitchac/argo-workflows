@@ -1,0 +1,13 @@
+{"data": {
+	"summary":  "bovine-test",
+  
+  "sra_accessions": [
+  {
+    "R1": "Gharechahi-2021/SRR222_R1.fq",
+    "R2": "Gharechahi-2021/SRR222_R2.fq",
+    "studyID": "Gharechahi-2021",
+    "acc": "SRR222",
+    "acc_lowercase": "srr222"
+  }
+  ]
+}}

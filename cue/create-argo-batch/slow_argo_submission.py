@@ -51,6 +51,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--blacklist', help='Ignore accessions that are in this file')
     parent_parser.add_argument('--whitelist', help='Only submit accessions that are in this file')
     parent_parser.add_argument('--context', help='argo submit to this context [default: Do not specify]')
+    parent_parser.add_argument('--priority', type=int, help='argo submit with this priority [default: Do not specify]')
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -152,7 +153,7 @@ if __name__ == '__main__':
             f.flush()
 
             logging.info("Creating workflow YAML and submitting ..")
-            extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
+            extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |tee /tmp/tee |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
 
             # Keep trying submission, in case of head node failure.
             while True:
@@ -160,7 +161,10 @@ if __name__ == '__main__':
                     context_arg = ""
                     if args.context:
                         context_arg = f"--context {args.context}"
-                    extern.run(f"argo submit -n argo {context_arg} -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
+                    priority_arg = ""
+                    if args.priority:
+                        priority_arg = f"--priority {args.priority}"
+                    extern.run(f"argo submit -n argo {context_arg} {priority_arg} -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
                 except extern.ExternCalledProcessError as e:
                     logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
                     time.sleep(args.sleep_interval)
