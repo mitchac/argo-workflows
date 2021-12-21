@@ -13,7 +13,8 @@ _cloud_configs: {
 		storage: {
 			endpoint: "s3.amazonaws.com"
 			// bucket: "batch-artifact-repository-401305384268"
-			bucket: "singlem-results-us-east-2"
+			// bucket: "singlem-results-us-east-2"
+			bucket: "singlem-results-us-west-2"
 		}
 	}
 	gcp: #cloud_config & {
