@@ -52,6 +52,7 @@ if __name__ == '__main__':
     parent_parser.add_argument('--whitelist', help='Only submit accessions that are in this file')
     parent_parser.add_argument('--context', help='argo submit to this context [default: Do not specify]')
     parent_parser.add_argument('--priority', type=int, help='argo submit with this priority [default: Do not specify]')
+    parent_parser.add_argument('--pending-threshold', type=int, help='Submit only when there are fewer than this amount pending', default=250)
     
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
@@ -109,75 +110,113 @@ if __name__ == '__main__':
     else:
         raise Exception("Need batch size or batch size file")
 
+    def more_required(args):
+        context_arg = ""
+        if args.context:
+            context_arg = f"--context {args.context}"
+        json_list = extern.run(f'argo list {context_arg} -n {args.namespace} -o json')
+        j = json.loads(json_list)
+        # with open('/tmp/argo.json') as f:
+        #     j = json.load(f)
+
+        status = {}
+        for i in j:
+            if 'nodes' in i['status']:
+                nodes = list(sorted(i['status']['nodes'].values(), key=lambda x: x['displayName']))
+                
+                if len(nodes) == 2:
+                    current_status = nodes[-1]['phase']
+                elif len(nodes) < 2:
+                    raise Exception("Unexpected number of nodes in json object")
+                else:
+                    current_state = nodes[-1]['phase']
+            else:
+                current_status = 'Submitting'
+
+            if current_status not in status:
+                status[current_status] = 0
+            status[current_status] += 1
+
+            if 'Pending' in status and status['Pending'] > args.pending_threshold:
+                return False
+            else:
+                return True
+
     while not qu.empty():
-        if args.batch_size_file:
-            with open(args.batch_size_file) as f:
-                prev = batch_size
-                batch_size = int(f.read().strip())
-                if prev != batch_size:
-                    logging.info(f"Changing batch size to {batch_size} entries")
-        chunk = []
-        while not qu.empty() and len(chunk) < batch_size:
-            chunk.append(qu.get())
+        if not more_required(args):
+            logging.info("More was not required, enough are Pending, sleeping")
+            time.sleep(args.sleep_interval)
+        else:
+            logging.info("More required, submitting another batch ..")
 
-        # Create cue format manually
+            if args.batch_size_file:
+                with open(args.batch_size_file) as f:
+                    prev = batch_size
+                    batch_size = int(f.read().strip())
+                    if prev != batch_size:
+                        logging.info(f"Changing batch size to {batch_size} entries")
+            chunk = []
+            while not qu.empty() and len(chunk) < batch_size:
+                chunk.append(qu.get())
 
-        # package create_argo_batch
+            # Create cue format manually
 
-        # _data: {
-        #     // meta info
-        #     summary:  "argo-first-batch"
+            # package create_argo_batch
 
-        #     sra_accessions: [
-        #         {acc: "ERR4374862", mbases: 444, mbytes: 555},
-        #     ]
-        # }
+            # _data: {
+            #     // meta info
+            #     summary:  "argo-first-batch"
 
-        # use cue import because otherwise the _data is surrounded by {}, which fails it.
-        for_cue = json.dumps(
-            {"data": {
-                "summary": nickname,
-                "sra_accessions": chunk
-            }}, indent=4)
-        with tempfile.NamedTemporaryFile(suffix='.json') as f:
-            f.write(for_cue.encode())
-            f.flush()
-            cue_out = extern.run(f"cue import {f.name} -o -")
-        logging.debug(f"cue_out was {cue_out}")
+            #     sra_accessions: [
+            #         {acc: "ERR4374862", mbases: 444, mbytes: 555},
+            #     ]
+            # }
 
-        # Add the extra bits to fix formatting
-        cue_out = "package create_argo_batch\n\n_"+cue_out
+            # use cue import because otherwise the _data is surrounded by {}, which fails it.
+            for_cue = json.dumps(
+                {"data": {
+                    "summary": nickname,
+                    "sra_accessions": chunk
+                }}, indent=4)
+            with tempfile.NamedTemporaryFile(suffix='.json') as f:
+                f.write(for_cue.encode())
+                f.flush()
+                cue_out = extern.run(f"cue import {f.name} -o -")
+            logging.debug(f"cue_out was {cue_out}")
 
-        with tempfile.NamedTemporaryFile(suffix='.cue') as f:
-            f.write(cue_out.encode())
-            f.flush()
+            # Add the extra bits to fix formatting
+            cue_out = "package create_argo_batch\n\n_"+cue_out
 
-            logging.info("Creating workflow YAML and submitting ..")
-            extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |tee /tmp/tee |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
+            with tempfile.NamedTemporaryFile(suffix='.cue') as f:
+                f.write(cue_out.encode())
+                f.flush()
 
-            # Keep trying submission, in case of head node failure.
-            while True:
-                try:
-                    context_arg = ""
-                    if args.context:
-                        context_arg = f"--context {args.context}"
-                    priority_arg = ""
-                    if args.priority:
-                        priority_arg = f"--priority {args.priority}"
-                    extern.run(f"argo submit -n argo {context_arg} {priority_arg} -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
-                except extern.ExternCalledProcessError as e:
-                    logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
+                logging.info("Creating workflow YAML and submitting ..")
+                extern.run(f"cue eval . {f.name} --out yaml -p create_argo_batch |tee /tmp/tee |yq eval '.merged_templates.[] | splitDoc' - >merged-workflow-templates-list.yaml")
+
+                # Keep trying submission, in case of head node failure.
+                while True:
+                    try:
+                        context_arg = ""
+                        if args.context:
+                            context_arg = f"--context {args.context}"
+                        priority_arg = ""
+                        if args.priority:
+                            priority_arg = f"--priority {args.priority}"
+                        extern.run(f"argo submit -n argo {context_arg} {priority_arg} -o json merged-workflow-templates-list.yaml |jq > submissions/slow-`date +%Y%m%d-%I%M`.argo_submission.json")
+                    except extern.ExternCalledProcessError as e:
+                        logging.warn("Failed to argo submit. Retrying after pause. Error was {}".format(e))
+                        time.sleep(args.sleep_interval)
+                        continue
+
+                    logging.info("Submitted")
+                    break
+
+                num_submitted += len(chunk)
+                logging.info(f"Submitted {num_submitted} out of {total_to_submit} i.e. {round(float(num_submitted)/total_to_submit*100)}%")
+
+                if num_submitted < total_to_submit:
+                    logging.info("sleeping ..")
                     time.sleep(args.sleep_interval)
-                    continue
-
-                logging.info("Submitted")
-                break
-
-            num_submitted += len(chunk)
-            logging.info(f"Submitted {num_submitted} out of {total_to_submit} i.e. {round(float(num_submitted)/total_to_submit*100)}%")
-
-            if num_submitted < total_to_submit:
-                logging.info("sleeping ..")
-                time.sleep(args.sleep_interval)
 
     logging.info("Finished all submissions")
