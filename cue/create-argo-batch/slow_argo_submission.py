@@ -53,7 +53,8 @@ if __name__ == '__main__':
     parent_parser.add_argument('--context', help='argo submit to this context [default: Do not specify]')
     parent_parser.add_argument('--priority', type=int, help='argo submit with this priority [default: Do not specify]')
     parent_parser.add_argument('--pending-threshold', type=int, help='Submit only when there are fewer than this amount pending', default=250)
-    
+    parent_parser.add_argument('--namespace','-n',default='argo')
+
     parent_parser.add_argument('--debug', help='output debug information', action="store_true")
     #parent_parser.add_argument('--version', help='output version information and quit',  action='version', version=repeatm.__version__)
     parent_parser.add_argument('--quiet', help='only output errors', action="store_true")
@@ -115,6 +116,8 @@ if __name__ == '__main__':
         if args.context:
             context_arg = f"--context {args.context}"
         json_list = extern.run(f'argo list {context_arg} -n {args.namespace} -o json')
+        if json_list == 'No workflows found\n':
+            return True
         j = json.loads(json_list)
         # with open('/tmp/argo.json') as f:
         #     j = json.load(f)
@@ -129,7 +132,7 @@ if __name__ == '__main__':
                 elif len(nodes) < 2:
                     raise Exception("Unexpected number of nodes in json object")
                 else:
-                    current_state = nodes[-1]['phase']
+                    current_status = nodes[-1]['phase']
             else:
                 current_status = 'Submitting'
 
@@ -137,10 +140,11 @@ if __name__ == '__main__':
                 status[current_status] = 0
             status[current_status] += 1
 
-            if 'Pending' in status and status['Pending'] > args.pending_threshold:
-                return False
-            else:
-                return True
+        logging.info(f'{status}')
+        if 'Pending' in status and status['Pending'] > args.pending_threshold:
+            return False
+        else:
+            return True
 
     while not qu.empty():
         if not more_required(args):
