@@ -56,6 +56,8 @@ if __name__ == '__main__':
         loglevel = logging.INFO
     logging.basicConfig(level=loglevel, format='%(asctime)s %(levelname)s: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
+    raise Exception("Need to add some exceptions e.g. SRR1563167 (libraryselection=unspecified)")
+
     sql = """
 -- STEP 1: Create temporary table with metagenome taxonomy entries
 -- Loop counter
